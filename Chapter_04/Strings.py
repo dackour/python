@@ -6,3 +6,7 @@ print(len(S))
 print(S[0])
 # The second item from the left
 print(S[1])
+# The last item from the end in S
+print(S[-1])
+# The second-to-last item from the end
+print(S[-2])
