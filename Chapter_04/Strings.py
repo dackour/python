@@ -29,3 +29,9 @@ print(S[:3])
 print(S[:-1])
 # All of S as top-level copy  (0:len(S))
 print(S[:])
+# Concatenation
+print(S + 'xyz')
+# S is unchanged
+print(S)
+# Repetition
+print(S * 8)
