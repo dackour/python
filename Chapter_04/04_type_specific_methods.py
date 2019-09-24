@@ -19,3 +19,4 @@ print('{}, eggs and {}'.format('spam', 'SPAM!'))        # Numbers optional (2.7+
 
 print('{:,.2f}'.format(296999.2567))                      # Separator, decimal digits
 print('%.2f | %+05d' % (3.14159, -42))                    # Digits, padding, signs
+
