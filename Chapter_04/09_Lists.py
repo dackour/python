@@ -60,4 +60,16 @@ print(myDiag1)
 myDiag2 = [M[i][j] for i,j in [(0, 2), (1, 1), (2, 0)]]  # Collect reverse diagonal using tuple
 print(myDiag2)
 
+myDoubles = [c * 2 for c in 'spam']  # Repeat characters in a string
+print(myDoubles)
+
+print(list(range(4)))  # 0..3 (list() required in 3.X)
+print(list(range(-6, 7, 2)))  # -6 to +6 by step of 2 (need list() in 3.X)
+
+myValues1 = [[x ** 2, x ** 3] for x in range(4)]  # Multiple values "if" filters
+print(myValues1)
+
+myValues2 = [[x, x / 2, x * 2] for x in range(-6, 7, 2) if x > 0]  # Multiple values "if" filters
+print(myValues2)
+
 
