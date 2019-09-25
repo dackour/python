@@ -77,4 +77,11 @@ print(next(G))               # iter(G) not required here
 print(next(G))               # Run the iteration protocol next()
 print(next(G))
 
+print(list(map(sum, M)))      # Map sum over items in M
+
+print({sum(row) for row in M})  # Create a set of row sums
+
+print({i : sum(M[i]) for i in range(3)})  # Creates a key/value table of row sums
+
+
 
