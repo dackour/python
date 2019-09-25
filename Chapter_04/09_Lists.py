@@ -72,4 +72,9 @@ print(myValues1)
 myValues2 = [[x, x / 2, x * 2] for x in range(-6, 7, 2) if x > 0]  # Multiple values "if" filters
 print(myValues2)
 
+G = (sum(row) for row in M)  # Create a generator of row sums
+print(next(G))               # iter(G) not required here
+print(next(G))               # Run the iteration protocol next()
+print(next(G))
+
 
