@@ -6,3 +6,4 @@ match = re.match('[:/](.*)[/:](.*)[/:](.*)', '/user/home:lumberjack')
 print(match.group())
 
 print(re.split('[/:]', '/user/home/lumberjack'))
+
