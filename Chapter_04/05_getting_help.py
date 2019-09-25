@@ -1,5 +1,6 @@
 S = 'Spam'
 
+
 print(dir(S))
 
 print(S + 'NI!')
