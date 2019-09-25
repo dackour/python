@@ -79,9 +79,20 @@ print(next(G))
 
 print(list(map(sum, M)))      # Map sum over items in M
 
-print({sum(row) for row in M})  # Create a set of row sums
+mySet = {sum(row) for row in M}  # Create a set of row sums
+print(mySet)
 
-print({i : sum(M[i]) for i in range(3)})  # Creates a key/value table of row sums
+myDict = {i : sum(M[i]) for i in range(3)}  # Creates a key/value table of row sums
+print(myDict)
 
+myList = [ord(x) for x in 'spaam']  # List of character ordinals
+print(myList)
 
+mySet = {ord(x) for x in 'spaam'} # set removes duplicates
+print(mySet)
 
+myDict2 = {x : ord(x) for x in 'spaam'}  # Dictionary keys are unique
+print(myDict2)
+
+myGen = (ord(x) for x in 'spaam')  # Generator of values
+print(myGen)
