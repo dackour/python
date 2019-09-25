@@ -8,7 +8,6 @@ S = 'A\0B\0C'       # \0 a binary zero byte, does not terminate string
 print(S)
 print(len(S))
 
-
 S = 'A\x00B\x00C'   #Non-printables are displayed as \xNN hex escapes
 print(S)
 
