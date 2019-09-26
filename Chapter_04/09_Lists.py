@@ -88,7 +88,7 @@ print(myDict)
 myList = [ord(x) for x in 'spaam']  # List of character ordinals
 print(myList)
 
-mySet = {ord(x) for x in 'spaam'} # set removes duplicates
+mySet = {ord(x) for x in 'spaam'}  # set removes duplicates
 print(mySet)
 
 myDict2 = {x : ord(x) for x in 'spaam'}  # Dictionary keys are unique
