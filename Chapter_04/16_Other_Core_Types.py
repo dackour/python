@@ -25,3 +25,11 @@ d = decimal.Decimal('3.141')
 print(d + 1)
 decimal.getcontext().prec = 2
 print(decimal.Decimal('1.00') / decimal.Decimal('3.00'))
+
+from fractions import Fraction  # Fraction numerator+denominator
+f = Fraction(2, 3)
+print(f + 1)
+print(f + Fraction(1, 2))
+
+print(1 > 2, 1 < 2)  # Booleans
+print(bool('spam'))  # object's boolean value
