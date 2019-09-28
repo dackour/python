@@ -57,10 +57,13 @@ print(value)
 
 D4 = {'a': 1, 'c': 3, 'b': 2}
 Ks = list(D4.keys())  # Unordered keys list
+print(Ks)  # A list in 2.X, view in 3.X use list()
+
+Ks.sort()  # Sorted key list
 print(Ks)
 
-Ks.sort()
-print(Ks)
+for key in Ks:  # Iterate through sorted keys
+    print(key, '=>', D4[key])
 
-for key in Ks:
+for key in sorted(D4):
     print(key, '=>', D4[key])
