@@ -21,3 +21,8 @@ print(text.encode('utf-16'))
 
 print(len(text.encode('latin-1')), len(text.encode('utf-16')))
 print(b'\xff\xfes\x00p\x00\xc4\x00m\x00'.decode('utf-16'))  # But same string decoded
+
+import codecs
+print(codecs.open('unidata.txt', encoding='utf-8').read())  # 2.X read/decode text
+print(open('unidata.txt', 'rb').read())  # 2.X read raw bytes
+open('unidata.txt').read()  # 2.X raw/undecoded too
