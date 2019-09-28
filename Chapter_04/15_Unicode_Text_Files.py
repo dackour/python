@@ -14,3 +14,4 @@ raw = open('unidata.txt', 'rb').read()  # Read raw encoded bytes
 print(raw)
 print(len(raw))  # Really 5 bytes in UTF-8
 print(text.encode('utf-8'))
+print(raw.decode('utf-8'))
