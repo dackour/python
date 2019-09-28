@@ -54,3 +54,13 @@ print(value)
 
 value = D3['x'] if 'x' in D3 else 0  # if/else expression form
 print(value)
+
+D4 = {'a': 1, 'c': 3, 'b': 2}
+Ks = list(D4.keys())  # Unordered keys list
+print(Ks)
+
+Ks.sort()
+print(Ks)
+
+for key in Ks:
+    print(key, '=>', D4[key])
