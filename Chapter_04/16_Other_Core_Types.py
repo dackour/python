@@ -15,3 +15,13 @@ print(setcomp)
 print(list(set([1, 2, 1, 3, 1])))  # Filtering out duplicates (possibly reordered)
 print(set('spam') - set('ham'))  # Finding differences in collections
 print(set('spam') == set('asmp'))  # Order-neutral equality tests (== is False)
+print('p' in set('spam'), 'p' in 'spam', 'ham' in ['eggs', 'spam', 'ham'])
+
+print(1/3)  # Floating point (add .0 in Python 2.0)
+print((2/3) + (1/2))
+
+import decimal  # Decimals fixed precision
+d = decimal.Decimal('3.141')
+print(d + 1)
+decimal.getcontext().prec = 2
+print(decimal.Decimal('1.00') / decimal.Decimal('3.00'))
