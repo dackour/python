@@ -9,3 +9,6 @@ file.close()
 text = open('unidata.txt', encoding='utf8').read()  # Read/decode UTF-8 text
 print(text)
 print(len(text))  # 4 characters (code points)
+
+raw = open('unidata.txt', 'rb').read()
+print(raw)
