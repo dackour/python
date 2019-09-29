@@ -13,5 +13,3 @@ print(2 + 4.0, 2.0 ** b)  # Mixed type conversions
 print(b / 2 + a)  # Same as ((4/2)+3)
 print(b / (2.0 + a))  # Same as (4/(2.0+3)
 
-print(b / (2.0 + a))
-print(b / (2.0 + a))
