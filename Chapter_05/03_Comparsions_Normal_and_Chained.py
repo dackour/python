@@ -16,4 +16,9 @@ print(x < y and y > z)
 print(1 < 2 < 3.0 < 4)
 print(1 > 2 > 3.0 > 4)
 
-print(1 == 2 < 3)
+print(1 == 2 < 3)  # Same as 1 == 2 and 2 < 3
+
+print(1.1 + 2.2 == 3.3)  # Shouldn't be true?
+print(1.1 + 2.2)  # Close to 3.3 but not exactly: limited precision
+print(int(1.1 + 2.2) == int(3.3))  # Ok if convert see also round floor trunc ahead
+                                   # Decimals and fractions (ahead) may hel here too
