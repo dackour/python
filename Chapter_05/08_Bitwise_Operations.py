@@ -12,3 +12,10 @@ print(X)
 print(bin(X << 2))  # Binary digits string
 print(bin(X | 0b010))  # Bitwise OR either
 print(bin(X & 0b1))  # Bitwise AND both
+
+X = 0xFF
+print(bin(X))
+print(X ^ 0b10101010)  # Bitwise XOR either but not both
+print(bin(X ^ 0b10101010))
+print(int('01010101', 2))  # Digits to number string to int per base
+print(hex(85))  # Number to digits Hex digit string
