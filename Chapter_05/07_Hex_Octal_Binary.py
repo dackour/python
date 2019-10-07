@@ -12,3 +12,8 @@ print(64, 0o100, 0x40, 0b1000000)  # Digits to numbers in scrpts and strings
 print(int('64'), int('100', 8), int('40', 16), int('1000000', 2))
 
 print(int('0x40', 16), int('0b1000000', 2))  # Literal forms supported too
+
+print(eval('64'), eval('0o100'), eval('0x40'), eval('0b1000000'))
+
+print('{0:o}, {1:x}, {2:b}'.format(64, 64, 64))  # Numbers to digits
+print('%o, %x, %x, %X' % (64, 64, 255, 255))  # Similar in all Pythons
