@@ -21,3 +21,13 @@ print(math.trunc(-2.5))
 
 print(5 / 2, 5 / -2)
 print(5 // 2, 5 // -2)  # Truncates to floor rounds to first lower integer 2.5 becomes 2, -2.5 becomes -3
+print(5 / 2.0, 5 / -2.0)
+print(5 // 2.0, 5 // -2.0)  # Ditto for floats, though result is float too
+
+print(5 / -2)  # Keep remainder
+print(5 // -2)  # floor below result
+print(math.trunc(5 / -2))  # Truncate instead of floor (same as int())
+
+print((5 / 2), (5 / 2.0), (5 / -2.0), (5 / -2))  # true division
+print((5 // 2),(5 // 2.0),(5 // -2.0),(5 // -2))  # floor division
+print((9 / 3), (9.0 / 3), (9 // 3), (9 // 3.0))  # Both
