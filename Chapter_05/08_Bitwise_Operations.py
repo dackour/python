@@ -19,3 +19,7 @@ print(X ^ 0b10101010)  # Bitwise XOR either but not both
 print(bin(X ^ 0b10101010))
 print(int('01010101', 2))  # Digits to number string to int per base
 print(hex(85))  # Number to digits Hex digit string
+
+X = 99
+print(bin(X), X.bit_length(), len(bin(X)) - 2)
+print(bin(256), (256).bit_length(), len(bin(256)) - 2)
