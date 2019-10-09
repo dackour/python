@@ -74,3 +74,14 @@ print(x + 2.0) # Fraction + float = float
 print(x + (1./3))  # Fraction + float = float
 print(x + (4./3))
 print(x + Fraction(4, 3))  # Fraction + Fraction = Fraction
+
+print(4.0 / 3)
+print((4.0 / 3).as_integer_ratio())  # Precision loss from float
+
+print(x)
+a = x + Fraction(*(4.0 / 3).as_integer_ratio())
+print(a)
+
+print(22517998136852479 / 13510798882111488)  # 5/3 or close to it
+
+print(a.limit_denominator(10))  # Simplify to closest fraction
