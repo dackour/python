@@ -44,3 +44,12 @@ print(S)
 
 S.add('alot')  # Methods work as before
 print(S)
+
+S1 = {1, 2, 3, 4}
+print(S1 & {1, 3})  # Intersection
+print({1, 5, 3, 6} | S1)  # Union
+print(S1 - {1, 3, 4})  # Difference
+print(S1 > {1, 3}) # Superset
+
+print(S1 - {1, 2, 3, 4})  # Empty sets print differently
+print(type({}))  # Because {} is an empty dictonary
