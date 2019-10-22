@@ -112,3 +112,7 @@ print(engineers | managers)  # All people in either category
 print(engineers - managers)  # Engineers that are not managers
 print(managers - engineers)  # Managers who are not engineers
 print(engineers > managers)  # Are all managers engineers? superset
+print({'bob', 'sue'} < engineers)  # Are both engineers? superset
+print((managers | engineers) > managers) # All people is a superset of managers
+print(managers ^ engineers)  # Who is in one but not both? XOR bez czesci wspolnej
+print((managers | engineers) - (managers ^ engineers))  # Intersection!
