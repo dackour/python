@@ -63,3 +63,14 @@ print({1, 2, 3} | {3, 4})
 print({1, 2, 3}.union([3, 4]))
 print({1, 2, 3}.union({3, 4}))
 print({1, 2, 3}.union(set([3, 4])))
+print({1, 2, 3}.intersection((1, 3, 5)))
+print({1, 2, 3}.issubset(range(-5, 5)))
+
+print(S)
+#S.add([1, 2, 3])  # Only immutable objects work in a set
+#S.add({'a':1})
+S.add((1, 2, 3))
+print(S)  # No list or dict, but tuple OK
+print(S | {(4, 5, 6), (1, 2, 3)})  # Union: same as S.union(...)
+print((1, 2, 3) in S)  # Membership: by complete values
+print((1, 4, 3) in S)
