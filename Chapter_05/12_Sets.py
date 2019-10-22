@@ -102,3 +102,13 @@ print(L1 == L2)  # Order matters in sequences
 print(set(L1) == set(L2))  # Order-neutral equality
 print(sorted(L1) == sorted(L2))  # Similar but results ordered
 print('spam' == 'asmp', set('spam') == set('asmp'), sorted('spam') == sorted('asmp'))
+
+engineers = {'bob', 'sue', 'ann', 'vic'}
+managers = {'tom', 'sue'}
+
+print('bob' in engineers)  # Is bob an engineer?
+print(engineers & managers)  # who is both engineer and manager
+print(engineers | managers)  # All people in either category
+print(engineers - managers)  # Engineers that are not managers
+print(managers - engineers)  # Managers who are not engineers
+print(engineers > managers)  # Are all managers engineers? superset
