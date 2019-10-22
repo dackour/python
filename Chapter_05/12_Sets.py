@@ -53,3 +53,13 @@ print(S1 > {1, 3}) # Superset
 
 print(S1 - {1, 2, 3, 4})  # Empty sets print differently
 print(type({}))  # Because {} is an empty dictonary
+
+S = set()  # Initialize an empty set
+S.add(1.23)
+print(S)
+
+print({1, 2, 3} | {3, 4})
+#print({1, 2, 3} | [3, 4])
+print({1, 2, 3}.union([3, 4]))
+print({1, 2, 3}.union({3, 4}))
+print({1, 2, 3}.union(set([3, 4])))
