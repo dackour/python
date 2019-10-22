@@ -74,3 +74,19 @@ print(S)  # No list or dict, but tuple OK
 print(S | {(4, 5, 6), (1, 2, 3)})  # Union: same as S.union(...)
 print((1, 2, 3) in S)  # Membership: by complete values
 print((1, 4, 3) in S)
+
+print({x ** 2 for x in [1, 2, 3, 4]})  # 3.x/2.7 set comprehension
+print({x for x in 'spam'})  # Same as set('spam')
+print({c * 4 for c in 'spam'})  # Set of collected expression results
+print({c * 4 for c in 'spamham'})
+
+S = {c * 4 for c in 'spam'}
+print(S | {'mmmm', 'xxxx'})
+print(S & {'mmmm', 'xxxx'})
+
+L = [1, 2, 1, 3, 2, 4, 5]
+print(set(L))
+L = list(set(L))  # Remove duplicates
+print(L)
+
+print(list(set(['yy', 'cc', 'aa', 'xx', 'dd', 'aa'])))  # But order may change
