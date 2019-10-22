@@ -90,3 +90,15 @@ L = list(set(L))  # Remove duplicates
 print(L)
 
 print(list(set(['yy', 'cc', 'aa', 'xx', 'dd', 'aa'])))  # But order may change
+
+print(set([1, 3, 5, 7]) - set([1, 2, 4, 5, 6]))  # Find list differences
+print(set('abcdefg') - set('abdghij'))  # Find string differences
+print(set('spam') - set(['h', 'a', 'm']))  # Find differences, mixed
+print(set(dir(bytes)) - set(dir(bytearray)))  # In bytes but not bytearray
+print(set(dir(bytearray)) - set(dir(bytes)))
+
+L1, L2 = [1, 3, 5, 2, 4], [2, 5, 3, 4, 1]
+print(L1 == L2)  # Order matters in sequences
+print(set(L1) == set(L2))  # Order-neutral equality
+print(sorted(L1) == sorted(L2))  # Similar but results ordered
+print('spam' == 'asmp', set('spam') == set('asmp'), sorted('spam') == sorted('asmp'))
