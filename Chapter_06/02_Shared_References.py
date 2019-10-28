@@ -23,4 +23,4 @@ L1 = [2, 3, 4]
 L2 = L1[:]  # Make a copy of L1 (or list(L1), copy.copy(L1), etc.# )
 L1[0] = 24
 print(L1)
-print(L2)
+print(L2)  # L2 is not changed
