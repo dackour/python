@@ -47,3 +47,6 @@ X = 42
 Y = 42  # Should be two different objects
 print(X == Y)
 print(X is Y)  # Same object anyhow: coaching at work!
+
+import sys
+print(sys.getrefcount(1))  # 100 pointers to this shared piece of memory
