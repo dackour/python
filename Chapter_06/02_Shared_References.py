@@ -42,3 +42,8 @@ L = [1, 2, 3]
 M = [1, 2, 3]  # L and M reference different objects
 print(L == M)  # Same values
 print(L is M)  # Different objects
+
+X = 42
+Y = 42  # Should be two different objects
+print(X == Y)
+print(X is Y)  # Same object anyhow: coaching at work!
