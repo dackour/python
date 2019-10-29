@@ -1,0 +1,3 @@
+print(len('abc'))  # Length number of items
+print('abc' + 'def')  # Concatenation a new string
+print('Ni!' * 7)  # Repetition like 'Ni!' + 'Ni!' + ...
