@@ -33,3 +33,20 @@ print(len(x))
 path = r'C:\new\text.dat'
 print(path)  # User friendly format
 print(len(path))
+
+mantra = '''Always look
+on the bright
+side of life.
+'''
+print(mantra)
+
+menu = """spam  # comments here added to string!
+eggs  # ditto
+"""
+print(menu)
+
+menu = (
+"spam\n"  # comments here ignored
+"eggs\n"  # but new lines not automatic
+)
+print(menu)
