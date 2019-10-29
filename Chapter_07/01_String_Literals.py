@@ -50,3 +50,10 @@ menu = (
 "eggs\n"  # but new lines not automatic
 )
 print(menu)
+
+X = 1
+'''
+import os
+print(os.getcwd())
+'''
+Y = 2
