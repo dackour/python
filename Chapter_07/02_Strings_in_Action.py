@@ -28,3 +28,15 @@ print('spam'[1:3])  # Slicing syntax
 print('spam'[slice(1, 3)])  # Slice objects with index syntax + object
 print('spam'[::-1])
 print('spam'[slice(None, None, -1)])
+
+print(int('42'), str(42))  # Convert from/to string
+print(repr(42))  # Convert to as-code string
+
+S = '42'
+I = 1
+print(int(S) + I)  # Force addition
+print(S + str(I))  # Force concatenation
+
+print(str(3.1415), float('1.5'))
+text = '1.234E-10'
+print(float(text))  # Shows more digits before 2.7 and 3.1
