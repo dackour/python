@@ -40,3 +40,6 @@ print(S + str(I))  # Force concatenation
 print(str(3.1415), float('1.5'))
 text = '1.234E-10'
 print(float(text))  # Shows more digits before 2.7 and 3.1
+
+print(ord('s'))
+print(chr(115))
