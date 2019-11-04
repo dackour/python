@@ -63,3 +63,14 @@ print('Ni' in line)
 
 sub = 'Ni!\n'
 print(line.endswith(sub))  # End test via method call or slice
+print(line[-len(sub):] == sub)
+
+print(help(S.endswith))
+
+S = 'a+b+c+'
+x = S.replace('+', 'spam')
+print(x)
+
+# import string
+# y = string.replace(S, '+', 'spam')
+# print(y)
