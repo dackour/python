@@ -33,3 +33,8 @@ Your age is %(age)s
 """
 values = {'name': 'Bob', 'age': 40}  # Build up values to substitute
 print(reply % values)  # Perform substitutions
+
+food = 'spam'
+qty = 10
+print(vars())
+print('%(qty)d more %(food)s' % vars())  # Variables are keys in vars()
