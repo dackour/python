@@ -63,3 +63,12 @@ print(I)
 
 print(int('1101', 2))  # Convert binary to integer built-int
 print(bin(13))  # Convert integer to binary: built-in
+
+S = 'spam'
+# S[0] = 'x'  # Raises an error!
+
+S = S + 'SPAM!'  # To change string make a new one
+print(S)
+S = S[:4] + 'Burger' + S[-1]
+print(S)
+
