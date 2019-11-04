@@ -38,3 +38,5 @@ food = 'spam'
 qty = 10
 print(vars())
 print('%(qty)d more %(food)s' % vars())  # Variables are keys in vars()
+
+print('%o, %x, %x, %X' % (64, 64, 255, 255))
