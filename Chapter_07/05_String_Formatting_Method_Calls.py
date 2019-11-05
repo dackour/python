@@ -91,3 +91,34 @@ print('My %(kind)s runs %(platform)s' % dict(kind='laptop', platform=sys.platfor
 somelist = list('SPAM')
 parts = somelist[0], somelist[-1], somelist[1:3]
 print('first=%s, last=%s, middle=%s' % parts)
+
+# Adding specific formatting
+
+print('%-10s = %10s' % ('spam', 123.4567))
+
+print('%10s = %-10s' % ('spam', 123.4567))
+
+print('%(plat)10s = %(kind)-10s' % dict(plat=sys.platform, kind='laptop'))
+
+# Floating point numbers
+
+print('%e, %.3e, %g' % (3.14159, 3.14159, 3.14159))
+
+print('%f, %.2f, %06.2f' % (3.14159, 3.14159, 3.14159))
+
+# Hex and octal, but not binary (see ahead)
+
+print('%x, %o' % (255, 255))
+
+# Hardcoded references in both
+
+print('My {1[kind]:<8} runs {0.platform:>8}'.format(sys, {'kind': 'laptop'}))
+print('My %(kind)-8s runs %(plat)8s' % dict(kind='laptop', plat=sys.platform))
+
+# Building data ahead of time in both
+
+data = dict(platform=sys.platform, kind='laptop')
+print('My {kind:<8} runs {platform:>8}'.format(**data))  # **data unpacks a dictionary of keys and values into
+                                                         # individual "name=value" keyword arguments so they can be
+                                                         # referenced by name in format string
+print('My %(kind)-8s runs %(platform)8s' % data)
