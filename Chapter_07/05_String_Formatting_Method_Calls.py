@@ -65,9 +65,11 @@ print(bin(255), int('11111111', 2), 0b11111111)  # Other to/from binary
 
 print(hex(255), int('FF', 16), 0xFF)  # Other to/from hex
 
-print(oct(255), int('377', 8), 0o377)  # Other to/from octal, in 3.X
-                                       # 2.X prints and accepts 0377
-
+print(oct(255), int('377', 8), 0o377)
+'''
+# Other to/from octal, in 3.X
+2.X prints and accepts 0377
+'''
 print('{0:.2f}'.format(1 / 3.0))  # Parameters hardcoded
 print('%.2f' % (1 / 3.0))  # Ditto for expression
 
@@ -118,7 +120,20 @@ print('My %(kind)-8s runs %(plat)8s' % dict(kind='laptop', plat=sys.platform))
 # Building data ahead of time in both
 
 data = dict(platform=sys.platform, kind='laptop')
-print('My {kind:<8} runs {platform:>8}'.format(**data))  # **data unpacks a dictionary of keys and values into
-                                                         # individual "name=value" keyword arguments so they can be
-                                                         # referenced by name in format string
+print('My {kind:<8} runs {platform:>8}'.format(**data))
+'''
+**data unpacks a dictionary of keys and values into
+individual "name=value" keyword arguments so they can be
+referenced by name in format string
+'''
 print('My %(kind)-8s runs %(platform)8s' % data)
+
+print('{0:d}'.format(999999999999))
+print('{0:,d}'.format(999999999999))
+
+print('{:,d}'.format(999999999999))
+print('{:,d} {:,d}'.format(9999999, 8888888))
+print('{:,.2f}'.format(296999.2567))
+
+from formats import commas, money
+print('%s' % commas(999999999999))
