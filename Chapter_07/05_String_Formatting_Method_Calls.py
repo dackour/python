@@ -159,3 +159,14 @@ print('{:,d}'.format(999999999999))  # New str.format method feature in 3.1/2.7
 # Not working because of module formats
 print('%s' % commas(999999999999)  # But % is same with simple 8-line function
 '''
+
+print('{name} {job} {name}'.format(name='Bob', job='dev'))
+print('%(name)s %(job)s %(name)s' % dict(name='Bob', job='dev'))
+
+D = dict(name='Bob', job='dev')
+print('{0[name]} {0[job]} {0[name]}'.format(D))  # Method, key references
+print('{name} {job} {name}'.format(**D))  # Method, dict-to-args
+print('%(name)s %(job)s %(name)s' % D)  # Expressions, key references
+
+
+
