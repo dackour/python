@@ -81,3 +81,13 @@ print('%.2f' % 1.2345)  # Expression
 print('%s=%s' % ('spam', 42))  # Format expression: in all 2.X/3.X
 print('{0}={1}'.format('spam', 42))  # Format method: in 3.0+ and 2.6+
 print('{}={}'.format('spam', 42))  # With autonumbering: in 3.1 and 2.7
+
+print('%s, %s and %s' % (3.14, 42, [1, 2]))  # Arbitrary types
+
+print('My %(kind)s runs %(platform)s' % {'kind': 'laptop', 'platform': sys.platform})
+
+print('My %(kind)s runs %(platform)s' % dict(kind='laptop', platform=sys.platform))
+
+somelist = list('SPAM')
+parts = somelist[0], somelist[-1], somelist[1:3]
+print('first=%s, last=%s, middle=%s' % parts)
