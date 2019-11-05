@@ -77,3 +77,7 @@ print('%.*f' % (4, 1 / 3.0))  # Ditto for expression
 print('{0:.2f}'.format(1.2345))  # String method
 print(format(1.2345, '.2f'))  # Built-in function
 print('%.2f' % 1.2345)  # Expression
+
+print('%s=%s' % ('spam', 42))  # Format expression: in all 2.X/3.X
+print('{0}={1}'.format('spam', 42))  # Format method: in 3.0+ and 2.6+
+print('{}={}'.format('spam', 42))  # With autonumbering: in 3.1 and 2.7
