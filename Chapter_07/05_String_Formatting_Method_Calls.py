@@ -39,5 +39,18 @@ print('first={0[0]}, third={0[2]}'.format(somelist))
 print('first={0}, last={1}'.format(somelist[0], somelist[-1]))  # [-1] fails in fmt
 
 parts = somelist[0], somelist[-1], somelist[1:3]  # [1:3] fails in fmt
-print('first={0}, last={1}, middle={2}'.format(*parts))
+print('first={0}, last={1}, middle={2}'.format(*parts))  # *parts unpacks tuple into individual function arguments
 print('first={}, last={}, middle={}'.format(*parts))  # Or '{}' in 2.7/3.1
+
+# {filename component !conversionflag :formatspec}
+# formatspec:
+# [[fill]align][sign][#][0][width][,][.precision][typecode]
+
+print('{0:10} = {1:10}'.format('spam', 123.4567))  # In Python 3.3
+print('{:10} = {:10}'.format('spam', 123.4567))
+
+print('{0:>10} = {1:<10}'.format('spam', 123.4567))
+print('{:>10} = {:<10}'.format('spam', 123.4567))
+
+print('{0.platform:>10} = {1[kind]:<10}'.format(sys, dict(kind='laptop')))
+print('{.platform:>10} = {[kind]:<10}'.format(sys, dict(kind='laptop')))
