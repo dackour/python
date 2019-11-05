@@ -73,3 +73,7 @@ print('%.2f' % (1 / 3.0))  # Ditto for expression
 
 print('{0:.{1}f}'.format(1 / 3.0, 4))  # Take value from arguments
 print('%.*f' % (4, 1 / 3.0))  # Ditto for expression
+
+print('{0:.2f}'.format(1.2345))  # String method
+print(format(1.2345, '.2f'))  # Built-in function
+print('%.2f' % 1.2345)  # Expression
