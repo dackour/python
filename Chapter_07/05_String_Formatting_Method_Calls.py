@@ -27,6 +27,7 @@ Y = X.replace('and', 'but under no circumstances')
 print(Y)
 
 import sys
+
 print('My {1[kind]} runs {0.platform}'.format(sys, {'kind': 'laptop'}))
 
 print('My {map[kind]} runs {sys.platform}'.format(sys=sys, map={'kind': 'laptop'}))
@@ -148,7 +149,7 @@ print(''.join(commas(x) for x in (9999999, 8888888)))
 '''
 
 print('{0:b}'.format((2 ** 16) - 1))  # Expression (only) binary format code
-#print('%b' % ((2 ** 16) - 1))
+# print('%b' % ((2 ** 16) - 1))
 print(bin((2 ** 16) - 1))  # But other more general options work too
 print('%s' % bin((2 ** 16) - 1))  # Usable with both method and % expression
 print('{}'.format(bin((2 ** 16) - 1)))  # With 2.7/3.1+ relative numbering
@@ -183,3 +184,24 @@ print('%s' % 1.23)  # Single value by itself
 print('%s' % (1.23,))  # Single value in a tuple
 print('%s' % ((1.23),))  # Single value that is a tuple
 
+print('{0:.2f}'.format(1.2345))  # Single value
+print('{0:.2f} {1}'.format(1.2345, 99))  # Multiple value
+print('{0}'.format(1.23))  # Single value, by itself
+print('{0}'.format((1.23), ))  # Single value that is a tuple
+
+
+def myformat(fmt, args): return fmt % args  # See part IV
+
+
+myformat('%s %s', (88, 99))  # Call your function object
+str.format('{} {}', 88, 99)  # Versus calling the built-in
+
+print('%(num)i = %(title)s' % dict(num=7, title='Strings'))
+print('{num:d} = {title:s}'.format(num=7, title='Strings'))
+print('{num} = {title}'.format(**dict(num=7, title='Strings')))
+
+import string
+t = string.Template('$num = $title')
+print(t.substitute({'num': 7, 'title': 'Strings'}))
+print(t.substitute(num=7, title='Strings'))
+print(t.substitute(dict(num=7, title='Strings')))
