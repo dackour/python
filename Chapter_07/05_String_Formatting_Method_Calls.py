@@ -168,5 +168,18 @@ print('{0[name]} {0[job]} {0[name]}'.format(D))  # Method, key references
 print('{name} {job} {name}'.format(**D))  # Method, dict-to-args
 print('%(name)s %(job)s %(name)s' % D)  # Expressions, key references
 
+print('The {0} side {1} {2}'.format('bright', 'of', 'life'))  # Python 3.X, 2.6+
+print('The {} side {} {}'.format('bright', 'of', 'life'))  # Python 3.1+, 2.7+
+print('The %s side %s %s' % ('bright', 'of', 'life'))  # All Pythons
 
+print('{0:f}, {1:.2f}, {2:05.2f}'.format(3.14159, 3.14159, 3.14159))
+print('{:f}, {:.2f}, {:06.2f}'.format(3.14159, 3.14159, 3.14159))
+print('%f, %.2f, %06.2f' % (3.14159, 3.14159, 3.14159))
+
+print('%.2f' % 1.2345)  # Single value
+print('%.2f %s' % (1.2345, 99))  # Multiple values tuple
+
+print('%s' % 1.23)  # Single value by itself
+print('%s' % (1.23,))  # Single value in a tuple
+print('%s' % ((1.23),))  # Single value that is a tuple
 
