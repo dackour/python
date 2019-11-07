@@ -83,4 +83,40 @@ print(L)
 L = ['abc', 'ABD', 'aBe']
 print(sorted([x.lower() for x in L], reverse=True))  # Pretransform items : differs!
 
+L = [1, 2]
+L.extend([3, 4, 5])  # Add many items at the end like in-place +
+print(L)
+print(L.pop())  # Delete and return last item (by default: -1)
+print(L)
+L.reverse()  # In place reversal method
+print(L)
+print(list(reversed(L)))  # Reversal built-in with a result (iterator)
 
+L = []
+L.append(1)  # Push on to stack
+L.append(2)
+print(L)
+print(L.pop())  # Pop off stack
+print(L)
+
+L = ['spam', 'eggs', 'ham']
+print(L.index('eggs'))  # Index of an object (search/find)
+L.insert(1, 'toast')  # Insert at position
+print(L)
+L.remove('eggs')  # Delete by value
+print(L)
+print(L.pop(1))  # Delete by position
+print(L)
+print(L.count('spam'))  # Number of occurrences
+
+L = ['spam', 'eggs', 'ham', 'toast']
+del L[0]  # Delete one item
+print(L)
+del L[1:]  # Delete an entire section
+print(L)   # Same as L[1:] = []
+
+L = ['Already', 'got', 'one']
+L[1:] = []
+print(L)
+L[0] = []
+print(L)
