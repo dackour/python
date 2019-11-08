@@ -40,3 +40,35 @@ print(L.pop())  # Delete and return from the end
 print(L)
 print(L.pop(1))  # Delete from a specific position
 print(L)
+
+table = {  # Key: Value
+    '1975': 'Holy Grail',
+    '1979': 'Life of Brian',
+    '1983': 'The Meaning of Life'
+}
+
+year = '1983'
+movie = table[year]  # dictionary[Key] => Value
+print(movie)
+
+for year in table:  # Same as for year in table.keys()
+    print(year + '\t' + table[year])
+
+table = {  # Key=>Value (title=>year)
+    'Holy Grail': '1975',
+    'Life of Brian': '1979',
+    'The Meaning of Life': '1983'
+}
+
+print(table['Holy Grail'])
+
+print(list(table.items())) # Value=Key (year=>title)
+
+print([title for (title, year) in table.items() if year == '1975'])
+
+K = 'Holy Grail'
+print(table[K])  # Key=>Value (normal usage)
+
+V = '1975'
+print([key for (key, value) in table.items() if value == V])  # Value=>Key
+print([key for key in table.keys() if table[key] == V])  # Ditto
