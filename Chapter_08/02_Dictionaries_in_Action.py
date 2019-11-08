@@ -72,3 +72,80 @@ print(table[K])  # Key=>Value (normal usage)
 V = '1975'
 print([key for (key, value) in table.items() if value == V])  # Value=>Key
 print([key for key in table.keys() if table[key] == V])  # Ditto
+
+# L = []
+# L[99] = 'spam'
+
+D = {}
+D[99] = 'spam'
+print(D[99])
+print(D)
+
+table = {
+    1975: 'Holy Grail',
+    1979: 'Life of Brian',  # Keys are integers, not strings
+    1983: 'The Meaning of Life'
+}
+print(table[1975])
+print(list(table.items()))
+
+Matrix = {}
+Matrix[(2, 3, 4)] = 88
+Matrix[(7, 8, 9)] = 99
+
+X = 2; Y = 3; Z = 4  # ; separates statements: see Chapter 10
+print(Matrix[(X, Y, Z)])
+print(Matrix)
+
+# Matrix[(2, 3, 6)]
+
+if (2, 3, 6) in Matrix:  # check for key before fetch
+    print(Matrix[(2, 3, 6)])  # See Chapter 10 and 12 for if/else
+else:
+    print(0)
+
+try:
+    print(Matrix[(2, 3, 6)])  # try to index
+except KeyError:  # catch and recover
+    print(0)  # see chapter 10 and 34 for try/except
+
+print(Matrix.get((2, 3, 4), 0))  # Exists: fetch and return
+print(Matrix.get((2, 3, 6), 0))  # Doesnt exists: use default arg
+
+rec = {}
+rec['name'] = 'Bob'
+rec['age'] = 40.5
+rec['job'] = 'developer/manager'
+
+print(rec['name'])
+
+rec = {
+    'name': 'Bob',
+    'jobs': ['developer', 'manager'],
+    'web': 'www.bobs.org/~Bob',
+    'home': {'state': 'Overworked', 'zip': 12345}
+}
+
+rec2 = {
+    'name': 'Jack',
+    'jobs': ['Admin', 'manager'],
+    'web': 'www.jacks.org/~Jack',
+    'home': {'state': 'Married', 'zip': 54321}
+}
+
+print(rec['name'])
+print(rec['jobs'])
+print(rec['jobs'][1])
+print(rec['home']['zip'])
+
+db = []  # A list "Database"
+db.append(rec)
+db.append(rec2)
+print(db[0]['jobs'])
+print(db[1]['jobs'])
+
+db = {}
+db['bob'] = rec  # A dictionary "database"
+db['jack'] = rec2
+print(db)
+print(db['bob']['jobs'])
