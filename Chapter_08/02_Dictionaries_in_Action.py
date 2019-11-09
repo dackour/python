@@ -217,3 +217,38 @@ print(D)
 
 D = {k: None for k in 'spam'}
 print(D)
+
+D = dict(a=1, b=2, c=3)
+print(D)
+
+K = D.keys()  # Makes a view object in 3.X, not a list
+print(K)
+print(list(K))  # Force a real list in 3.X if needed
+
+V = D.values()
+print(V)
+print(list(V))
+
+print(D.items())
+print(list(D.items()))
+
+#K[0]  # List operation fails unless converted
+print(list(K)[0])
+
+for k in D.keys(): print(k)  # Iterators used automatically in loops
+
+for key in D: print(key)  # Still no need to call keys() to iterate
+
+D = {'b': 2, 'c': 3, 'a': 1}
+print(D)
+
+K = D.keys()
+V = D.values()
+print(list(K))  # Views maintain same order as dictionary
+print(list(V))
+
+del D['b']  # Change a dictionary in place
+print(D)
+
+print(list(K))  # Reflected in any current view objects
+print(list(V))  # Not true in 2.X! list detached from dict
