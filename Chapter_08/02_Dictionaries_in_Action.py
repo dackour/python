@@ -202,3 +202,18 @@ print(D)
 
 D = {c: c * 4 for c in 'SPAM'}  # Loop over any iterable
 print(D)
+
+D = {c.lower(): c + '!' for c in ['SPAM', 'EGGS', 'HAM']}
+print(D)
+
+D = dict.fromkeys(['a', 'b', 'c'], 0)  # Initialize dict from keys
+print(D)
+
+D = {k: 0 for k in ['a', 'b', 'c']}  # Same but with a comprehension
+print(D)
+
+D = dict.fromkeys('spam')  # Other iterables, default value
+print(D)
+
+D = {k: None for k in 'spam'}
+print(D)
