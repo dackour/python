@@ -149,3 +149,18 @@ db['bob'] = rec  # A dictionary "database"
 db['jack'] = rec2
 print(db)
 print(db['bob']['jobs'])
+
+{'name': 'Bob', 'age': 40}  # traditional literal expression
+
+D = {}  # assigned by keys dynamically
+D['name'] = 'Bob'
+D['age'] = 40
+
+dict(name='Bob', age=40)  # dict keyword argument form
+dict([('name', 'Bob'), ('age', 40)]) # dict key/value tuples form
+
+keylist = ['name', 'age']
+valueslist = ['Bob', 40]
+D2 = dict(zip(keylist, valueslist))  # Zipped key/value tuples form (ahead)
+print(D2)
+
