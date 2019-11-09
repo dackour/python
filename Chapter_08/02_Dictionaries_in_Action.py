@@ -164,3 +164,27 @@ valueslist = ['Bob', 40]
 D2 = dict(zip(keylist, valueslist))  # Zipped key/value tuples form (ahead)
 print(D2)
 
+print(dict.fromkeys(['a', 'b'], 0))
+
+L = ['Bob', 40.5, ['dev', 'mgr']]  # List-based "record"
+print(L[0])
+print(L[1])  # Position/numbers for fields
+print(L[2][1])
+
+D = {'name': 'Bob', 'age': 40.5, 'jobs': ['dev', 'mgr']}  # Dictionary-based "record"
+print(D['name'])
+print(D['age'])
+print(D['jobs'][1])  # Names mean more than numbers
+
+D = dict(name='Bob', age=40.5, jobs=['dev', 'mgr'])
+print(D['name'])
+D['jobs'].remove('mgr')
+print(D)
+
+D = {}
+D['state1'] = True  # A visited state dictionary
+print('state1' in D)
+
+S = set()
+S.add('state1')  # Same but with sets
+print('state1' in S)
