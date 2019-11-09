@@ -188,3 +188,17 @@ print('state1' in D)
 S = set()
 S.add('state1')  # Same but with sets
 print('state1' in S)
+
+print(list(zip(['a', 'b', 'c'], [1, 2, 3])))  # Zip together keys and values
+
+D = dict(zip(['a', 'b', 'c'], [1, 2, 3]))  # Make a dict from zip result
+print(D)
+
+D = {k: v for (k, v) in zip(['a', 'b', 'c'], [1, 2, 3])}
+print(D)
+
+D = {x: x ** 2 for x in [1, 2, 3, 4]}  # Or range(1, 5)
+print(D)
+
+D = {c: c * 4 for c in 'SPAM'}  # Loop over any iterable
+print(D)
