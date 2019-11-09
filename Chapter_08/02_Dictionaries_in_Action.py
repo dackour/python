@@ -252,3 +252,14 @@ print(D)
 
 print(list(K))  # Reflected in any current view objects
 print(list(V))  # Not true in 2.X! list detached from dict
+
+print(K, V)
+print(K | {'x': 4})  # Keys (and some items) views are setilike
+
+#V & {'x': 4}
+#V & {'x': 4}.values()
+
+D = {'a': 1, 'b': 2, 'c': 3}
+print(D.keys() & D.keys())  # Intersect keys views
+print(D.keys() & {'b'})  # Intersect keys and set
+print(D.keys() & {'b': 1})  # Intersect keys and dict
