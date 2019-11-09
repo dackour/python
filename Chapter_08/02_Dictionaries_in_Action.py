@@ -263,3 +263,48 @@ D = {'a': 1, 'b': 2, 'c': 3}
 print(D.keys() & D.keys())  # Intersect keys views
 print(D.keys() & {'b'})  # Intersect keys and set
 print(D.keys() & {'b': 1})  # Intersect keys and dict
+print(D.keys() | {'b', 'c', 'd'})  # Union keys and set
+
+D = {'a': 1}
+print(list(D.items()))  # Items set-like if hashable
+print(D.items() | D.keys())  # Union view and view
+print(D.items() | D)  # dict treated same as its keys
+print(D.items() | {('c', 3), ('d', 4)})  # Set of key/value pairs
+print(dict(D.items() | {('c', 3), ('d', 4)}))  # dict accepts iterable sets too
+
+D = {'b': 2, 'c': 3, 'a': 1}
+print(D)
+
+Ks = D.keys()  # Sorting a view object doesnt work!
+#Ks.sort()
+
+Ks = list(Ks)  # Force it to be a list and then sort
+Ks.sort()
+
+for k in Ks: print(k, D[k])  # 2.X omit outer parens in prints
+
+print(D)
+Ks = D.keys()  # Or you can use sorted() on the keys
+for k in sorted(Ks): print(k, D[k])  # Sorted() accepts any iterable and returns its result
+
+print(D)  # Better yet, sort the dict directly
+for k in sorted(D): print(k, D[k])  # dict iterators return keys
+
+D1 = {'a': 1, 'b': 2, 'c': 3}
+D2 = {'a': 1, 'b': 2, 'c': 3}
+# print(sorted(D1.items())) < sorted(D2.items())  # Like 2.X D1 < D2
+print(D1 == D2)
+
+D = {'b': 2, 'c': 3, 'a': 1}
+#D.has_key('c')  # 2.X only: True/False
+
+print('c' in D)  # Required in 3.X
+print('x' in D)  # Preferred in 2.X today
+
+if 'c' in D: print('present', D['c'])  # Branch on result
+
+print(D.get('c'))  # Fetch with default
+print(D.get('x'))
+
+if D.get('c') != None: print('present', D['c'])  # Another option
+
