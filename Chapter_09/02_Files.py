@@ -68,8 +68,10 @@ F = open('datafile.pkl', 'wb')
 import pickle
 pickle.dump(D, F)  # Pickle any object to file
 F.close()
-pickle.dump()
 
 F = open('datafile.pkl', 'rb')
 E = pickle.load(F)  # Load any object from file
 print(E)
+
+print(open('datafile.pkl', 'rb').read())  # Format is prone to change!
+#help(pickle)
