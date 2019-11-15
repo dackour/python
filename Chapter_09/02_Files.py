@@ -106,3 +106,22 @@ data = struct.pack('>i4sh', 7, b'spam', 8)  # Make packed binary data
 print(data)
 F.write(data)  # Write byte string
 F.close()
+
+F = open('data2.bin', 'rb')
+data = F.read()  # Get packed binary data
+print(data)
+values = struct.unpack('>i4sh', data)  # Convert to python objects
+print(values)
+
+with open('datafile.txt') as myfile:
+    for line in myfile:
+        print(len(line))
+
+
+myfile = open('datafile.txt')
+try:
+    for line in myfile:
+        print(len(line))
+finally:
+    print(type(myfile))
+    myfile.close()
