@@ -79,8 +79,22 @@ print(str(11) >= '11', 11 >= int('11'))  # Manual conversion force the issue
 
 #Python27
 D1 = {'a': 1, 'b': 2}
-D2 = {'a': 1, 'b': 2}
-D1 == D2
-False
-D1 < D2
+D2 = {'a': 1, 'b': 3}
+#D1 == D2  # Dictionary equality: 2.x + 3.x
+#False
+#D1 < D2  # Dictionary magnitude: 2.x only
 
+#Python33
+#D1 = {'a': 1, 'b': 2}
+#D2 = {'a': 1, 'b': 3}
+#D1 == D2
+#False
+#D1 < D2
+#TypeError
+
+
+print(list(D1.items()))
+print(sorted(list(D1.items())))
+
+print(sorted(D1.items()) < sorted(D2.items()))  # Magnitude test in 3.X
+print(sorted(D1.items()) > sorted(D2.items()))
