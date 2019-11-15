@@ -25,3 +25,14 @@ for line in open('myfile.txt'):  # Use file iterators, not reads
 #print(data)  # bytes sting holds binary data
 #print(data[4:8])  # Act like strings
 #print(data[4:8][0])  # But really are small 8-bit integers
+
+X, Y, Z = 43, 44, 45  # Native Python objects
+S = 'Spam'  # Must be string to store in file
+D = {'a': 1, 'b': 2}
+L =[1, 2, 3]
+
+F = open('datafile.txt', 'w')  # Create output text file
+F.write(S + '\n')  # Terminate lines with \n
+F.write('%s, %s, %s\n' % (X, Y, Z))  # Convert numbers to strings
+F.write(str(L) + '$' + str(D) + '\n')  # Convert and separate with $
+F.close()
