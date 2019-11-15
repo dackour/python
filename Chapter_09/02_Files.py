@@ -93,3 +93,11 @@ json.dump(rec, fp=open('testjson.txt', 'w'), indent=4)
 print(open('testjson.txt').read())
 P = json.load(open('testjson.txt'))
 print(P)
+
+csvfile = open('csvdata.txt', 'w')
+csvfile.write('a,bbb,cc,dddd\n')
+csvfile.write('11,22,33,44\n')
+csvfile.close()
+import csv
+rdr = csv.reader(open('csvdata.txt'))
+for row in rdr: print(row)
