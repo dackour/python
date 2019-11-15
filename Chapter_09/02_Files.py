@@ -36,3 +36,30 @@ F.write(S + '\n')  # Terminate lines with \n
 F.write('%s, %s, %s\n' % (X, Y, Z))  # Convert numbers to strings
 F.write(str(L) + '$' + str(D) + '\n')  # Convert and separate with $
 F.close()
+
+chars = open('datafile.txt').read()  # Raw string display
+chars
+print(chars)  # User friendly display
+
+F = open('datafile.txt')  # Open again
+line = F.readline()  # Read one line
+print(line)
+print(line.rstrip())  # Remove end of line
+
+line = F.readline()  # Next line from file
+print(line)
+parts = line.split(',')  # Split (parse) on commas
+print(parts)
+
+print(int(parts[1]))  # Convert from string to int
+numbers = [int(P) for P in parts]  # Convert all in a list at once
+print(numbers)
+
+line = F.readline()
+print(line)
+parts = line.split('$')
+print(parts)
+print(eval(parts[0]))  # Convert to any object type
+objects = [eval(P) for P in parts]  # Do same for all in list
+print(objects)
+
