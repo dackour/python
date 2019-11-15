@@ -21,9 +21,8 @@ bindata = struct.pack('>i4sh', 7, b'spam', 8)
 mybinfile.write(bindata)
 data = open('data.bin', 'rb').read()  # open binary file rb = read binary
 data  # bytes sting holds binary data
-data[4:8] # Act like strings
+data[4:8]  # Act like strings
 #data[4:8][0]  # But really are small 8-bit integers
-prin
 
 X, Y, Z = 43, 44, 45  # Native Python objects
 S = 'Spam'  # Must be string to store in file
