@@ -59,4 +59,28 @@ L1 = [1, ('a', 3)]
 L2 = [1, ('a', 2)]
 print(L1 < L2, L1 == L2, L1 > L2)  # Less, equal, greater: tuple of results
 
+# Python27
+#11 == '11'  # Equality does not convert non-numbers
+#False
+#11 >= '11'  # 2.X compares by type name string int,str
+#False
+#['11', '22'].sort()  # Ditto for sorts
+#[11, '11'].sort()
+
+#Python33
+print(11 == '11')  # Equality works but magnitude does not
+#11 >= '11'
+#TypeError
+['11', '22'].sort()  # Ditto for sorts
+#[11, '11'].sort()
+#TypeError
+print(11 > 9.123)  # Mixed numbers convert to highest type
+print(str(11) >= '11', 11 >= int('11'))  # Manual conversion force the issue
+
+#Python27
+D1 = {'a': 1, 'b': 2}
+D2 = {'a': 1, 'b': 2}
+D1 == D2
+False
+D1 < D2
 
