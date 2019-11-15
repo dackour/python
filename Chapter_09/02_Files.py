@@ -63,3 +63,13 @@ print(eval(parts[0]))  # Convert to any object type
 objects = [eval(P) for P in parts]  # Do same for all in list
 print(objects)
 
+D = {'a': 1, 'b': 2}
+F = open('datafile.pkl', 'wb')
+import pickle
+pickle.dump(D, F)  # Pickle any object to file
+F.close()
+pickle.dump()
+
+F = open('datafile.pkl', 'rb')
+E = pickle.load(F)  # Load any object from file
+print(E)
