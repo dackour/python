@@ -98,3 +98,57 @@ print(sorted(list(D1.items())))
 
 print(sorted(D1.items()) < sorted(D2.items()))  # Magnitude test in 3.X
 print(sorted(D1.items()) > sorted(D2.items()))
+
+L = [None] * 100
+print(L)
+
+print(bool(1))
+print(bool('spam'))
+print(bool({}))
+
+print(type([1]) == type([1]))  # Compare to type of another list
+print(type([1]) == list)  # Compare to list type name
+print(isinstance([1], list))  # Test if list or customization thereof
+
+import types  # types has names for other types
+def f(): pass
+type(f)  == types.FunctionType
+
+L = [1, 2, 3]
+M = ['X', L, 'Y']  # embed a eference to L
+print(M)
+L[1] = 0  # Changes M too
+print(M)
+
+L = [1, 2, 3]
+M = ['X', L[:], 'Y']  # Embed a copy of L (or list(L) or L.copy())
+L[1] = 0  # Changes only L not M
+print(L)
+print(M)
+
+L = [4, 5, 6]
+X = L * 4  # Like [4, 5, 6] + [4, 5, 6] + ...
+Y = [L] * 4  # [L] + [L] + ... = [L, L,...]
+print(X)
+print(Y)
+L[1] = 0  # Impacts Y but not X
+print(X)
+print(Y)
+
+L = [4, 5, 6]
+Y = [list(L)] * 4  # Embed a (shared) copy of L
+L[1] = 0
+print(Y)
+
+Y[0][1] = 99  # All four copies are still the same
+print(Y)
+
+L = [4, 5, 6]
+Y = [list(L) for i in range(4)]
+print(Y)
+Y[0][1] = 99
+print(Y)
+
+L = ['grail']  # append reference to same object
+L.append(L)  # Generates cycle in  object [...]
+print(L)
