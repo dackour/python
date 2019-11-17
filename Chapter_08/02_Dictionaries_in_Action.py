@@ -307,3 +307,4 @@ print(D.get('c'))  # Fetch with default
 print(D.get('x'))
 
 if D.get('c') != None: print('present', D['c'])  # Another option
+qq

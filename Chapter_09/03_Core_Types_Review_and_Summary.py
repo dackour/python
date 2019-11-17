@@ -153,4 +153,3 @@ L = ['grail']  # append reference to same object
 L.append(L)  # Generates cycle in  object [...]
 print(L)
 
-# Exercises
