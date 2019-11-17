@@ -39,3 +39,84 @@ print(list(D.keys()), list(D.values()), (1, 2, 3) in D)  # Method key test
 
 # Empties
 print([[]], ['', [], (), {}, None])  # Lots of nothing: empty objects
+
+# Indexing and slicing
+L = [1, 2, 3, 4]
+#print(L[4])  # Error
+print(L[-1000:100])
+print(L[3:1])  # Python scales out boundries L[3:3]
+print(L)
+L[3:1] = ['?']
+print(L)
+
+# Indexing, slicening and del
+L = [1, 2, 3, 4]
+L[2] = []
+print(L)
+L[2:3] = []
+print(L)
+del L[0]
+print(L)
+del L[1:]
+print(L)
+#L[1:2] = 1  # Error
+
+# Tuple assignment
+X = 'spam'
+Y = 'eggs'
+X, Y = Y, X
+print(X)
+print(Y)
+
+# Dictionaries keys
+D = {}
+D[1] = 'a'
+D[2] = 'b'
+D[(1, 2, 3)] = 'c'
+print(D)
+
+# Dictionary indexing
+D = {'a': 1, 'b': 2, 'c':3}
+print(D['a'])
+#print(D['d'])  # Error
+D['d'] = 4
+print(D)
+L = [0, 1]
+#L[2]  # Error
+#L[2] = 3  # Error
+
+# Generic operations
+# 'x' + 1  # Error not the same type
+# {} + {}  # Dictionaries are not sequences
+[].append(9)
+#''.append('s')  # Error append assumes target is mutable. strings are not
+print(list({}.keys()))  # list() needed in 3.x, not 2.x
+#[].keys()  # Error
+print([][:])
+print(''[:])
+
+# String indexing
+S = 'spam'
+print(S[0][0][0][0][0])
+L = ['s', 'p']
+print(L[0][0][0])
+
+# Immutable types
+S = 'spam'
+S = S[0] + 'l' + S[2:]
+print(S)
+S = S[0] + 'l' + S[2] + S[3]
+print(S)
+
+# Nesting
+me = {'name': ('John', 'Q', 'Doe'), 'age': '?', 'job': 'engineer'}
+print(me['job'])
+print(me['name'][2])
+
+# Files
+file = open('exercise.txt', 'w')
+file.write('Hello file word!\n')  # Or open().write()
+file.close()
+
+file = open('exercise.txt')  # 'r' is default open mode
+print(file.read())  # Or print(open().read())
