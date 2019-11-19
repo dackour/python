@@ -46,3 +46,46 @@ L = [1, 2, 3, 4]
 while L:
     front, L = L[0], L[1:]  # See the next section for 3.x alternative
     print(front, L)
+
+seq = [1, 2, 3, 4]
+a, b, c, d = seq
+print(a, b, c, d)
+#a, b = seq  # Error too many values to unpack
+
+a, *b = seq
+print(a)
+print(b)
+
+*a, b = seq
+print(a)
+print(b)
+
+a, *b, c = seq
+print(a)
+print(b)
+print(c)
+
+a, b, *c = seq
+print(a)
+print(b)
+print(c)
+
+seq = 'spam'
+a, *b = seq
+print(a, b)
+
+a, *b, c = seq
+print(a, b, c)
+
+a, *b, c = range(4)
+print(a, b, c)
+
+S = 'spam'
+print(S[0], S[1:])  # Slices are type specific, * assignment always returns a list
+print(S[0], S[1:3], S[3])
+
+L = [1, 2, 3, 4]
+while L:
+    front, *L = L  # Get first, rest without slicing
+    print(front, L)
+
