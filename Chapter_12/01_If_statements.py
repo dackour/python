@@ -59,3 +59,20 @@ try:
     print(branch[choice])
 except KeyError:
     print('Bad choice')
+
+x = 1
+if x:
+    y = 2
+    if y:
+        print('block 2')
+    print('block 1')
+print('block 0')
+
+x = 'SPAM'
+if 'rubbery' in 'shrubbery':
+    print(x * 8)  # Prints 8 'SPAM'
+    x += 'NI'
+    if x.endswith('NI'):
+        x *= 2
+        print(x)  # Prints 'SPAMNISPAMNISPAMNI'
+
