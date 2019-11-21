@@ -74,3 +74,16 @@ open('temp2.txt', 'w').write(str(X) + ' ' + str(Y) + '\n')  # Send to a file man
 
 print(open('temp1.txt', 'rb').read())  # Binary mode for bytes
 print(open('temp2.txt', 'rb').read())
+
+print('spam')  # 3.x print function call syntax
+print('spam', 'ham', 'eggs')  # This are multiple arguments
+
+# Python27
+#print('spam')  # 2.x statement, enclosing parens
+#print('spam', 'ham', 'eggs')  # This is really a tuple object in 2.7
+
+print()  # This is just a line feed on 3.0
+
+print('%s %s %s' % ('spam', 'ham', 'eggs'))
+print('{0} {1} {2}'.format('spam', 'ham', 'eggs'))
+print('answer: ' + str(42))
