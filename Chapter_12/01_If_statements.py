@@ -76,3 +76,29 @@ if 'rubbery' in 'shrubbery':
         x *= 2
         print(x)  # Prints 'SPAMNISPAMNISPAMNI'
 
+L = ['Good',
+     'Bad',
+     'Ugly']  # Open pairs may span lines
+
+a, b, c, d, e, f = (1, 1, 1, 1, 1, 1)
+if (a == b and c == d and
+    d == e and e == f):
+    print('new')  # Parentheses allows continuation and is obvious
+
+x = 1 + 2 + 3 \
+    + 4  # Omitting the \ makes this very different!
+
+x = 1; y = 2; print(x)  # More than one simple statement
+
+S = """
+aaaa
+bbbb
+cccc
+"""
+
+S = ('aaaa'
+     'bbbb'
+     'cccc')  # Comments here are ignored
+
+if 1: print('hello')  # Simple statement on header line
+
