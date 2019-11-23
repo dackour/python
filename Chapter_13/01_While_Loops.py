@@ -32,13 +32,12 @@ while x:
 
 print('\n')
 
-'''
+
 while True:
     name = input('Enter name: ')
     if name == 'stop': break
     age = input('Enter age: ')
     print('Hello', name, '=>', int(age) ** 2)
-'''
 
 y = input('Enter number: ')
 x = int(y) // 2
@@ -50,4 +49,5 @@ while x > 1:
     x -= 1
 else:
     print(y, 'is prime')
+
 
