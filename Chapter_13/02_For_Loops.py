@@ -123,3 +123,34 @@ for line in open('test.txt'):  # Use iterators best for text input
 
 for line in reversed(open('test.txt').readlines()):
     print(line.rstrip())
+
+print(list(range(5)), list(range(2,5)), list(range(0, 10, 2)))
+
+print(list(range(-5, 5)))
+print(list(range(5, -5, -1)))
+
+for i in range(3):
+    print(i, 'Pythons')
+
+X = 'spam'
+for item in X: print(item, end=' ')  # Simple iteration
+
+print('\n')
+
+i = 0
+while i < len(X):  # while loop iteration
+    print(X[i], end=' ')
+    i += 1
+
+print('\n')
+
+print(X)
+print(len(X))  # Length of a string
+print(list(range(len(X))))  # all legal offsets into X
+for i in range(len(X)): print(X[i], end=' ')  # Manual range/len iteration
+
+print('\n')
+
+for item in X: print(item, end=' ')  # Use simple iteration if you can
+
+print('\n')
