@@ -154,3 +154,52 @@ print('\n')
 for item in X: print(item, end=' ')  # Use simple iteration if you can
 
 print('\n')
+
+S = 'spam'
+for i in range(len(S)):  # For repeat counts 0..3
+    S = S[1:] + S[:1]  # Move front item to end
+    print(S, end=' ')
+
+print('\n')
+for i in range(len(S)):  # For positions 0..3
+    X = S[i:] + S[:i]  # Rear part + front part
+    print(X, end=' ')
+
+print('\n')
+
+L = [1, 2, 3]
+for i in range(len(L)):
+    X = L[i:] + L[:i]  # Works on any sequence type
+    print(X, end=' ')
+
+print('\n')
+
+S = 'abcdefghijk'
+print(list(range(0, len(S), 2)))
+for i in range(0, len(S), 2): print(S[i], end=' ')
+
+print('\n')
+
+for c in S[::2]: print(c, end=' ')
+
+print('\n')
+
+L = [1, 2, 3, 4, 5]
+for x in L:
+    x += 1  # Changes x, not 1
+print(L)
+print(x)
+
+for i in range(len(L)):  # Add one to each item in L
+    L[i] += 1  # Or L[i] = L[i] + 1
+print(L)
+
+i = 0
+while i < len(L):
+    L[i] += 1
+    i += 1
+
+print(L)
+
+print([x + 1 for x in L])
+print(L)
