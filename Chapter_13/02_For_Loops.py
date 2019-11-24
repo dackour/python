@@ -64,4 +64,32 @@ for all in [(1, 2, 3, 4), (5, 6, 7, 8)]:  # Manual slicing in 2.x
     a, b, c = all[0], all[1:3], all[3]
     print(a, b, c)
 
+items = ['aaa', 111, (4, 5), 2.01]  # A set of objects
+tests = [(4, 5), 3.14]  # Keys to search for
 
+for key in tests:  # for all keys
+    for item in items:  # for all items
+        if item == key:  # check for a match
+            print(key, 'was found')
+            break
+    else:
+        print(key, 'not found!')
+
+for key in tests:  # for all keys
+    if key in items:  # let python check for a match
+        print(key, 'was found')
+    else:
+        print(key, 'not found')
+
+seq1 = 'spam'
+seq2 = 'scam'
+
+res = []  # Start empty
+for x in seq1:  # Scan first sequence
+    if x in seq2:  # Common item?
+        res.append(x)  # Add to a result end
+
+print(res)
+
+res2 = [x for x in seq1 if x in seq2]  # Let Python collect results
+print(res2)
