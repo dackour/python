@@ -203,3 +203,73 @@ print(L)
 
 print([x + 1 for x in L])
 print(L)
+
+L1 = [1, 2, 3, 4]
+L2 = [5, 6, 7, 8]
+zip(L1, L2)
+print(list(zip(L1, L2)))  # list() required in 3.x not 2.x
+
+for (x, y) in zip(L1, L2):
+    print(x, y, '--', x + y)
+
+T1, T2, T3 = (1, 2, 3), (4, 5, 6), (7, 8, 9)
+print(T3)
+print(list(zip(T1, T2, T3)))  # Three tuples for three arguments
+
+S1 = 'abc'
+S2 = 'xyz123'
+print(list(zip(S1, S2)))  # Truncates at len(shortest)
+
+#print(map(None, S1, S2))  # 2.X only pads to len(longest)
+
+print(list(map(ord, 'spam')))
+
+res = []
+for c in 'spam': res.append(ord(c))
+print(res)
+
+D1 = {'spam': 1, 'eggs': 3, 'toast': 5}
+print(D1)
+
+D1 = {}
+D1['spam'] = 1
+D1['eggs'] = 3
+D1['toast'] = 5
+
+keys = ['spam', 'eggs', 'toast']
+vals = [1, 3, 5]
+
+print(list(zip(keys, vals)))
+D2 = {}
+for (k, v) in zip(keys, vals): D2[k] = v
+print(D2)
+
+D3 = dict(zip(keys, vals))
+print(D3)
+
+D4 = {k: v for (k, v) in zip(keys, vals)}
+print(D4)
+
+S = 'spam'
+offset = 0
+for item in S:
+    print(item, 'appears at offset', offset)
+    offset += 1
+
+print('\n')
+
+S = 'spam'
+for (offset, item) in enumerate(S):
+    print(item, 'appears at offset', offset)
+
+E = enumerate(S)
+print(E)
+print(next(E))
+print(next(E))
+print(next(E))
+
+P = [c * i for (i, c) in enumerate(S)]
+print(P)
+
+for (i, l) in enumerate(open('test.txt')):
+    print('%s) %s' % (i, l.rstrip()))
