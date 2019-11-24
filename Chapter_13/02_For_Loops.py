@@ -93,3 +93,33 @@ print(res)
 
 res2 = [x for x in seq1 if x in seq2]  # Let Python collect results
 print(res2)
+
+file = open('test.txt')
+while True:
+    char = file.read(1)  # Read by character
+    if not char: break  # Empty strings means end-of-file
+    print(char)
+
+for char in open('test.txt').read():
+    print(char)
+
+file = open('test.txt')
+while True:
+    line = file.readline()  # Read line by line
+    if not line: break
+    print(line.rstrip())  # Line already has a \n
+
+file = open('test.txt', 'rb')
+while True:
+    chunk = file.read(10)  # Read by chunk up to 10 bytes
+    if not chunk: break
+    print(chunk)
+
+for line in open('test.txt').readlines():
+    print(line.rstrip())
+
+for line in open('test.txt'):  # Use iterators best for text input
+    print(line.rstrip())
+
+for line in reversed(open('test.txt').readlines()):
+    print(line.rstrip())
