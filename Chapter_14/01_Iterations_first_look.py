@@ -84,3 +84,46 @@ while True:
         break
     print(X ** 2, end=' ')
 
+print('\n')
+
+# Other built-in Type Iterables
+
+D = {'a': 1, 'b': 2, 'c': 3}
+for key in D.keys():
+    print(key, D[key])
+
+I = iter(D)
+print(next(I))
+print(next(I))
+print(next(I))
+#print(next(I))  #Err
+
+for key in D:
+    print(key, D[key])
+
+import os
+P = os.popen('dir')
+print(P.__next__())
+print(P.__next__())
+#print(next(P))  #Err
+
+P = os.popen('dir')
+I = iter(P)
+print(next(I))
+print(I.__next__())
+
+R = range(5)
+print(R)  # Ranges are iterables in 3.x
+I = iter(R)  # Use iteration protocol to produce results
+print(next(I))
+print(next(I))
+print(list(range(5)))  # Or use list to collect all results at once
+
+E = enumerate('spam')  # Enumerate is iterable too
+print(E)
+I = iter(E)
+print(next(I))  # Generate results with iteration protocol
+print(next(I))  # Or use list to force generation to run
+print(list(enumerate('spam')))
+
+
