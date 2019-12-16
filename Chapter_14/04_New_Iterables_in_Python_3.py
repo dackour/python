@@ -4,7 +4,7 @@ print(zip('abc', 'xyz'))  # An iterable in Python 3.x (a list in 2.x)
 print(list(zip('abc', 'xyz')))  # Force list of results in 3.x to display
 
 Z = zip((1, 2), (3, 4))  # Unlike 2.x lists, cannot index, etc
-#print(Z[0])
+# print(Z[0])
 
 Z = list(zip((1, 2), (3, 4)))
 print(Z[0])
@@ -39,7 +39,7 @@ print(M)
 print(next(M))  # Use iterator manually: exhausts results
 print(next(M))  # These do not support len() or indexing
 print(next(M))
-#print(next(M)) Err StopIteration
+# print(next(M)) Err StopIteration
 
 for x in M: print(x)  # map iterator is now empty: one pass only
 
@@ -72,7 +72,7 @@ print(F)
 
 # Multiple vs Single Pass Iterators
 R = range(3)  # Range allows multiple iterators
-#next(R)  # Err range object is not an iterator
+# next(R)  # Err range object is not an iterator
 
 I1 = iter(R)
 print(next(I1))
@@ -91,7 +91,7 @@ print(next(I2))  # (3.x) I2 is at same spot as I1!
 M = map(abs, (-1, 0, 1))  # Ditto for map (and filter)
 I1 = iter(M); I2 = iter(M)
 print(next(I1), next(I1), next(I1))
-#next(I2)  # Err StopIteration (3.x) Single scan exhausted!
+# next(I2)  # Err StopIteration (3.x) Single scan exhausted!
 
 R = range(3)  # But range allows many iterators
 I1, I2 = iter(R), iter(R)
@@ -99,3 +99,48 @@ print(next(I1), next(I1), next(I1))
 print(next(I2))  # Multiple active scans, like 2.x lists
 
 # Dictionary view Iterables
+
+D = dict(a=1, b=2, c=3)
+print(D)
+
+K = D.keys()  # A view object in 3.x, not a list
+print(K)
+# next(K)  #TypeError Views are not iterators themselves
+I = iter(K)  # View iterables have an iterator
+print(next(I))  # which can be used manually
+print(next(I))  # but does not support len(), index
+
+for k in D.keys(): print(k, end=' ')  # All iteration contexts use auto
+
+print('\n')
+
+K = D.keys()
+print(list(K))  # Can still force a real list if needed
+
+V = D.values()  # Ditto for values() and items() views
+print(V)
+
+# print(V[0])  # TypeError
+print(list(V)[0])
+
+print(list(D.items()))
+
+for (k, v) in D.items(): print(k, v, end=' ')
+print('\n')
+
+print(D)  # Dictionaries still produce an iterator
+I = iter(D)  # Returns next key on each iteration
+print(next(I))
+print(next(I))
+
+for key in D: print(key, end=' ')  # Still no need to call keys() to iterate
+print('\n')  # But keys is an iterable in 3.x too!
+
+print(D)
+for k in sorted(D.keys()): print(k, D[k], end=' ')
+print('\n')
+
+for k in sorted(D): print(k, D[k], end=' ')  # Best practice key sorting
+print('\n')
+
+# Other Iteration Topics
