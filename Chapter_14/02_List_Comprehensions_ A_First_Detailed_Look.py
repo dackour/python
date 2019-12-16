@@ -43,3 +43,25 @@ print(lines)
 
 # Extended List Comprehensions Syntax
 
+lines = [line.rstrip() for line in open('script2.py') if line[0] == 'p']
+print(lines)
+
+res = []
+for line in open('script2.py'):
+    if line[0] == 'p':
+        res.append(line.rstrip())
+
+print(res)
+
+lines = [line.rstrip() for line in open('script2.py') if line.rstrip()[-1].isdigit()]
+print(lines)
+
+c = [x + y for x in 'abc' for y in 'lmn']
+print(c)
+
+res = []
+for x in 'abc':
+    for y in 'lmn':
+        res.append(x + y)
+
+print(res)
