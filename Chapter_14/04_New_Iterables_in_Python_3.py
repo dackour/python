@@ -71,4 +71,31 @@ F = [x for x in ['spam', '', 'ni'] if x]
 print(F)
 
 # Multiple vs Single Pass Iterators
+R = range(3)  # Range allows multiple iterators
+#next(R)  # Err range object is not an iterator
 
+I1 = iter(R)
+print(next(I1))
+print(next(I1))
+I2 = iter(R)  # Two iterators on one range
+print(next(I2))
+print(next(I1))  # I1 is at a different spot than I2
+
+Z = zip((1, 2, 3), (10, 20, 30))
+I1 = iter(Z)  # Two iterators on one zip
+I2 = iter(Z)
+print(next(I1))
+print(next(I1))
+print(next(I2))  # (3.x) I2 is at same spot as I1!
+
+M = map(abs, (-1, 0, 1))  # Ditto for map (and filter)
+I1 = iter(M); I2 = iter(M)
+print(next(I1), next(I1), next(I1))
+#next(I2)  # Err StopIteration (3.x) Single scan exhausted!
+
+R = range(3)  # But range allows many iterators
+I1, I2 = iter(R), iter(R)
+print(next(I1), next(I1), next(I1))
+print(next(I2))  # Multiple active scans, like 2.x lists
+
+# Dictionary view Iterables
