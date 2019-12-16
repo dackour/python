@@ -33,3 +33,42 @@ print(next(I))  # Continue taking from iterator, where left off
 print(I.__next__())  # .next() becomes .__next__(), but use new next()
 
 # The map, zip and filter iterables
+
+M = map(abs, (-1, 0, 1))  # map returns an iterable, not a list
+print(M)
+print(next(M))  # Use iterator manually: exhausts results
+print(next(M))  # These do not support len() or indexing
+print(next(M))
+#print(next(M)) Err StopIteration
+
+for x in M: print(x)  # map iterator is now empty: one pass only
+
+M = map(abs, (-1, 0, 1))  # Make a new iterable/iterator to scan again
+for x in M: print(x)  # Iteration context auto call next()
+
+print(list(map(abs, (-1, 0, 1))))  # Can force a real list if needed
+
+Z = zip((1, 2, 3), (10, 20, 30))  # zip is the same: a one -pass iterator
+print(Z)
+print(list(Z))
+
+for pair in Z: print(pair)  # Exhausted after one pass
+
+Z = zip((1, 2, 3), (10, 20, 30))
+for pair in Z: print(pair)  # Iterator used automatically or manually
+
+Z = zip((1, 2, 3), (10, 20, 30))  # Manual iteration (iter() not needed)
+print(next(Z))
+print(next(Z))
+
+print(filter(bool, ['spam', '', 'ni']))
+print(list(filter(bool, ['spam', '', 'ni'])))
+
+F = [x for x in ['spam', '', 'ni'] if bool(x)]
+print(F)
+
+F = [x for x in ['spam', '', 'ni'] if x]
+print(F)
+
+# Multiple vs Single Pass Iterators
+
