@@ -39,3 +39,27 @@ print(int.__doc__)
 print(map.__doc__)
 
 #PyDoc the help function
+import sys
+print(help(sys.getrefcount))
+print(help('re'))
+print(help('email.message'))
+print(help(sys))
+
+print(help(dict))
+print(help(str.replace))
+print(help(''.replace))
+print(help(ord))
+
+import docstrings
+help(docstrings.square)
+help(docstrings.Employee)
+help(docstrings)
+
+#PyDoc HTML Reports
+# in Console type:
+# python -m pydoc -b
+# first assumes python is in your system PATH
+# py -3 -m pydoc -b
+# second employs Python 3.3 ne Windows Launcher
+# C:\python33\python -m pydoc -b
+# third gives a full path to python
