@@ -37,3 +37,5 @@ print(sys.__doc__)
 print(sys.getrefcount.__doc__)
 print(int.__doc__)
 print(map.__doc__)
+
+#PyDoc the help function
