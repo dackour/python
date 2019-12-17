@@ -1,5 +1,5 @@
 # Python Documentation Sources
-import  sys
+import sys
 print(dir(sys))
 
 print(len(dir(sys)))  # Number names in sys
@@ -32,3 +32,8 @@ print(docstrings.square.__doc__)
 print(docstrings.__doc__)
 print(docstrings.square.__doc__)
 print(docstrings.Employee.__doc__)
+
+print(sys.__doc__)
+print(sys.getrefcount.__doc__)
+print(int.__doc__)
+print(map.__doc__)
