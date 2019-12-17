@@ -24,12 +24,11 @@ print(dir(str) == dir(''))  # Same result, type name or literal
 print(dir(list) == dir([]))
 
 # Docstrings
-
-print(square(4))
-print(square.__doc__)
-
-import
-
-
-
 import docstrings
+
+print(docstrings.square(4))
+print(docstrings.square.__doc__)
+
+print(docstrings.__doc__)
+print(docstrings.square.__doc__)
+print(docstrings.Employee.__doc__)
