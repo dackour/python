@@ -56,6 +56,7 @@ help(docstrings.Employee)
 help(docstrings)
 
 #PyDoc HTML Reports
+# Python >= 3.3
 # in Console type:
 # python -m pydoc -b
 # first assumes python is in your system PATH
@@ -63,3 +64,16 @@ help(docstrings)
 # second employs Python 3.3 ne Windows Launcher
 # C:\python33\python -m pydoc -b
 # third gives a full path to python
+
+#py -3 -m pydoc timeit
+
+# Python <= 3.2
+# in Console type:
+# python -m pydoc -g
+# py -3.2 -m pydoc -g
+
+# Beyond docstrings: Sphinx
+# The Standard Manal Set
+# Web Resources
+
+# Common Coding Gotchas
