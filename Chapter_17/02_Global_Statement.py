@@ -15,7 +15,7 @@ y, z = 1, 2  # Global variables in module
 
 def all_global():
     global x  # Declare global assigned
-    x = y + z  # No need to declar y,z LEGB rule
+    x = y + z  # No need to declare y,z LEGB rule
 
 
 # Program Design Minimize Global Variables
