@@ -33,17 +33,17 @@ X = 99  # This code doesnt know about second.py
 X = 99
 
 
-def setX(new):  # accessor make eternal changes explit
+def setX(new):  # accessor make external changes explict
     global X  # and can manage access in a single place
     X = new
 
 # second.py
 #import first
-#first.setX(88)  #Call the function intead of changing directly
+#first.setX(88)  #Call the function instead of changing directly
 
 # Other Ways to Access Globals
 # thismod.py
-var = 99  # GGlobal variable == module attribute
+var = 99  # Global variable == module attribute
 
 
 def local():
@@ -52,7 +52,7 @@ def local():
 
 def glob1():
     global var  # Declare global (normal)
-    var += 1  # Change globar var
+    var += 1  # Change global var
 
 
 def glob2():
