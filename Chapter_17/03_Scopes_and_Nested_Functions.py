@@ -103,3 +103,17 @@ print(acts[1](2))  # This should be 1 ** 2 (1)
 print(acts[2](2))  # This should be 2 ** 2 (4)
 print(acts[4](2))  # Only this should be 4 ** 2 (16)
 
+
+def makeActions():
+    acts = []
+    for i in range(5):
+        acts.append(lambda  x, i=i: i ** x)
+    return acts
+
+
+acts = makeActions()
+print(acts[0](2))  # 0 ** 2
+print(acts[1](2))  # 1 ** 2
+print(acts[2](2))  # 2 ** 2
+print(acts[4](2))  # 4 ** 2
+
