@@ -107,7 +107,7 @@ print(acts[4](2))  # Only this should be 4 ** 2 (16)
 def makeActions():
     acts = []
     for i in range(5):
-        acts.append(lambda  x, i=i: i ** x)
+        acts.append(lambda x, i=i: i ** x)
     return acts
 
 
@@ -117,3 +117,14 @@ print(acts[1](2))  # 1 ** 2
 print(acts[2](2))  # 2 ** 2
 print(acts[4](2))  # 4 ** 2
 
+
+def f1():
+    x = 99
+    def f2():
+        def f3():
+            print(x)  # Found in f1's local scope
+        f3()
+    f2()
+
+
+f1()
