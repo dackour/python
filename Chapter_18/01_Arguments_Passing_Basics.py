@@ -60,5 +60,3 @@ X = 1
 L = [1, 2]
 X, L = multiple(X, L)  # Assign results to callers names
 print(X, L)
-
-# Special Argument Matching Modes
