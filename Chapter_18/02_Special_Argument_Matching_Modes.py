@@ -261,4 +261,7 @@ print(minmax(grtrthan, 4, 2, 1, 5, 6, 3))
 
 # The punch Line
 
+print(min(4, 2, 1, 5, 6, 3))
+print(max(4, 2, 1, 5, 6, 3))
+
 
