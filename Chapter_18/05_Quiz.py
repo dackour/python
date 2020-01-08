@@ -66,9 +66,11 @@ func(1, *(5, 6))
 def func(a, b, c): a = 2; b[0] = 'x'; c['a'] = 'y'
 
 
-l=1; m=[1]; n={'a':0}
+l=1
+m=[1]
+n={'a':0}
 func(l, m, n)
-print(l, m ,n)
+print(l, m, n)
 
 # This displays (1, ['x'], {'a': 'y'})—the first assignment in the function doesn’t
 # impact the caller, but the second two do because they change passed-in mutable
