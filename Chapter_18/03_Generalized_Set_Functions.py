@@ -32,3 +32,15 @@ s1, s2, s3 = 'SPAM', 'SCAM', 'SLAM'
 print(intersect(s1, s2), union(s1, s2))  # Two operands
 print(intersect([1, 2, 3], (1, 4)))  # Mixed types
 print(intersect(s1, s2, s3))  # Three operands
+print(union(s1, s2, s3))
+
+
+def tester(func, items, trace=True):
+    for i in range(len(items)):
+        items = items[1:] + items[:1]
+        if trace: print(items)
+        print(sorted(func(*items)))
+
+
+tester(intersect, ('a', 'abcdefg', 'abdst', 'albmcnd'))
+tester(union, ('a', 'abcdefg', 'abdst', 'albmcnd'), False)
