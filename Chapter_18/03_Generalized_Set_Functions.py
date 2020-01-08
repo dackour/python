@@ -44,3 +44,9 @@ def tester(func, items, trace=True):
 
 tester(intersect, ('a', 'abcdefg', 'abdst', 'albmcnd'))
 tester(union, ('a', 'abcdefg', 'abdst', 'albmcnd'), False)
+tester(intersect, ('ba', 'abcdefg', 'abdst', 'albmcnd'), False)
+
+print(intersect([1, 2, 1, 3], (1, 1, 4)))
+print(union([1, 2, 1, 3], (1, 1, 4)))
+
+tester(intersect, ('ababa', 'abcdefga', 'aaaab'), False)
