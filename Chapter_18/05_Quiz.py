@@ -63,7 +63,10 @@ func(1, *(5, 6))
 # One last time: what is the output of this code, and why?
 
 
-def func(a, b, c): a = 2; b[0] = 'x'; c['a'] = 'y'
+def func(a, b, c):
+    a = 2
+    b[0] = 'x'
+    c['a'] = 'y'
 
 
 l=1
