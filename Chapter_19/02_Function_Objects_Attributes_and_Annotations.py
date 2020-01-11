@@ -51,3 +51,24 @@ print(func.__code__.co_varnames)
 print(func.__code__.co_argcount)
 
 # Function Attributes
+
+print(func)
+func.count = 0
+func.count += 1
+print(func.count)
+
+func.handles = 'Button-Press'
+print(func.handles)
+print(dir(func))
+
+
+def f(): pass
+
+
+f.handler = 'Some handler piece'
+dir(f)
+print(len(dir(f)))
+print([x for x in dir(f) if not x.startswith('__')])
+
+# Function Annotations in 3.X
+
