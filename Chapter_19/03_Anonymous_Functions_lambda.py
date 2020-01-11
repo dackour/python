@@ -97,4 +97,4 @@ t = showall(['spam\n', 'toast\n', 'eggs\n'])  # 3.X can use print
 showall = lambda x: [print(line, end='') for line in x]
 showall = lambda x: print(*x, sep='', end='')
 
-#Scopes: lambdas Can Be Nested Too
+# Scopes: lambdas Can Be Nested Too
