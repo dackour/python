@@ -120,6 +120,3 @@ x = Button(
     command=(lambda:sys.stdout.write('Spam\n')))
 x.pack()
 mainloop()  # This maybe optional in console mode
-
-
-# Functional programing
