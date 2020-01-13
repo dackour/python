@@ -47,4 +47,26 @@ print(I.__next__())
 
 # Selecting Items in iterables: filter
 
+L = list(range(-5, 6))  # an iterable in 3.X
+print(L)
+
+L = list(filter((lambda x: x > 0), range(-5, 6)))  # an iterable in 3.X
+print(L)
+
+
+res = []
+for x in range(-5, 6):  # The statement equivalent
+    if x > 0:
+        res.append(x)
+
+print(res)
+
+L = [x for x in range(-5, 6) if x > 0]
+print(L)
+
+I = (x for x in range(-5, 6) if x > 0)
+print(I.__next__())
+print(I.__next__())
+
+# Combining Items in Iterables: reduce
 
