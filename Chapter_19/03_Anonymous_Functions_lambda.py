@@ -98,3 +98,28 @@ showall = lambda x: [print(line, end='') for line in x]
 showall = lambda x: print(*x, sep='', end='')
 
 # Scopes: lambdas Can Be Nested Too
+
+
+def action(x):
+    return (lambda y: x + y) # Make and return function, remember x
+
+
+act = action(99)
+print(act)
+print(act(2))  # Call what action returned
+
+action = (lambda x: (lambda y: x + y))
+act = action(99)
+print(act(3))
+print(((lambda x: (lambda y: x + y))(99))(4))
+
+import sys
+from tkinter import Button, mainloop
+x = Button(
+    text='Press me',
+    command=(lambda:sys.stdout.write('Spam\n')))
+x.pack()
+mainloop()  # This maybe optional in console mode
+
+
+# Functional programing
