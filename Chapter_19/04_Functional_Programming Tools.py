@@ -70,3 +70,36 @@ print(I.__next__())
 
 # Combining Items in Iterables: reduce
 
+from functools import reduce  # Import in 3.X
+
+S = reduce((lambda x, y: x + y), [1, 2, 3, 4])
+print(S)
+S = reduce((lambda x, y: x * y), [1, 2, 3, 4])
+print(S)
+
+L = [1, 2, 3, 4]
+res = L[0]
+for x in L[1:]:
+    res = res + x
+
+print(res)
+
+
+def myreduce(func, seq):
+    tally = seq[0]
+    for next in seq[1:]:
+        tally = func(tally, next)
+    return tally
+
+
+S = myreduce((lambda x, y: x + y), [1, 2, 3, 4, 5])
+print(S)
+S = myreduce((lambda x, y: x * y), [1, 2, 3, 4, 5])
+print(S)
+
+import operator, functools
+S = functools.reduce(operator.add, [2, 4, 6])  # Function-based +
+print(S)
+S = functools.reduce((lambda x, y: x + y), [2, 4, 6])
+print(S)
+
