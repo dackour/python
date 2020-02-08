@@ -163,3 +163,28 @@ for (row1, row2) in zip(M, N):
 print(res)
 
 # Don't Abuse List Comprehensions: KISS
+# Why will you care: List Comprehensions and map
+
+file = open('myfile').readlines()
+print(file)
+
+res = []
+res = [line.rstrip() for line in open('myfile').readlines()]
+print(res)
+
+res = []
+res = [line.rstrip() for line in open('myfile')]
+print(res)
+
+res = []
+res = list(map((lambda line: line.rstrip()), open('myfile')))
+print(res)
+
+listoftuple = [('bob', 35, 'mgr'), ('sue', 40, 'dev')]
+res = []
+res = [age for (name, age, job) in listoftuple]
+print(res)
+
+res = []
+res = list(map((lambda row: row[1]), listoftuple))
+print(res)
