@@ -25,3 +25,39 @@ print(iter(y) is y)  # iter() is not required: a no-op here
 print(next(y))  # Can run next() immediately
 
 # Why generator functions?
+
+
+def buildsquares(n):
+    res = []
+    for i in range(n): res.append(i ** 2)
+    return res
+
+
+for x in buildsquares(5): print(x, end=' : ')
+
+print('\n')
+
+for x in [n ** 2 for n in range(5)]:
+    print(x, end=' : ')
+
+print('\n')
+
+for x in map((lambda n: n ** 2), range(5)):
+    print(x, end=' : ')
+
+print('\n')
+
+
+def ups(line):
+    for sub in line.split(','): # Substring generator
+        yield sub.upper()
+
+
+T = tuple(ups('aaa,bbb,ccc'))  # All iteration contexts
+print(T)
+
+D = {i: s for (i, s) in enumerate(ups('aaa,bbb,ccc'))}
+print(D)
+
+# Extended generator function protocol: send versus next
+
