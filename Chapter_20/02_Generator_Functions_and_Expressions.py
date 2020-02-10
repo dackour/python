@@ -184,3 +184,6 @@ for x in line.split():  # Statement equivalent?
 
 print(res)
 
+# Generator Functions Versus Generator Expressions
+
+
