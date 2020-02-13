@@ -428,6 +428,7 @@ def scramble5(seq):
 
 scramble6 = lambda seq: (seq[i:] + seq[:i] for i in range(len(seq)))
 
+# Dunno why it is not working there is no module inter2?
 # from inter2 import intersect, union
 #
 #
