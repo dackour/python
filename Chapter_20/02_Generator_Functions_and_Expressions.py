@@ -286,3 +286,34 @@ print('\n')
 
 # Generation in Built-in Types, Tools, and Classes
 
+D = {'a': 1, 'b': 2, 'c': 3}
+x = iter(D)
+print(next(x))
+print(next(x))
+
+for key in D:
+    print(key, D[key])
+
+for line in open('temp.txt'):
+    print(line, end='')
+
+print('\n')
+
+# Generators and library tools: Directory walkers
+
+import os
+for (root, subs, files) in os.walk('..'):  # Directory walk generator
+    for name in files:  # A python find operation
+        if name.startswith('01_'):
+            print(root, name)
+
+G = os.walk(r'C:\Users\bsmela\PycharmProjects\python')
+print(iter(G) is G)  # Single scan iterator: iter(G) optional
+I = iter(G)
+print(next(I))
+print(next(I))
+print(next(I))
+
+# Generators and function application
+
+
