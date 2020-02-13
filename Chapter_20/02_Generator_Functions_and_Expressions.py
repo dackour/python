@@ -341,3 +341,104 @@ print(*(x.upper() for x in 'spam'))
 # Example Generating Scrambled Sequences
 # Scrambling sequences
 
+L, S = [1, 2, 3], 'spam'
+for i in range(len(S)):  # For repeat counts 0..3
+    S = S[1:] + S[:1]  # Move front item to the end
+    print(S, end=' ')
+
+print('\n')
+
+for i in range(len(L)):
+    L = L[1:] + L[:1]  # Slice so any sequence type works
+    print(L, end=' ')
+
+print('\n')
+
+for i in range(len(S)):  # For positions 0..3
+    X = S[i:] + S[:i]  # Rear part + front part (same effect)
+    print(X, end=' ')
+
+print('\n')
+
+
+def scramble1(seq):
+    res = []
+    for i in range(len(seq)):
+        res.append(seq[i:] + seq[:i])
+    return res
+
+
+print(scramble1('spam'))
+
+
+def scramble2(seq):
+    return [seq[i:] + seq[:i] for i in range(len(seq))]
+
+
+print(scramble2('spam'))
+
+for x in scramble2((1, 2, 3)):
+    print(x, end=' ')
+
+print('\n')
+
+# Generator functions
+
+
+def scramble3(seq):
+    for i in range(len(seq)):
+        seq = seq[i:] + seq[:i]  # Generator function
+    yield seq  # Assignments work here
+
+
+def scramble4(seq):
+    for i in range(len(seq)):  # Generator function
+        yield seq[i:] + seq[:i]  # yield one item per iteration
+
+
+print(list(scramble4('spam')))  # List generates all results
+print(list(scramble4((1, 2, 3))))  # Any sequence type works
+
+for x in scramble4((1, 2, 3)):
+    print(x, end=' ')
+
+print('\n')
+
+# Generator expressions
+
+print(S)
+G = (S[i:] + S[:i] for i in range(len(S)))  # Generator expression equivalent
+print(list(G))
+
+F = lambda seq: (seq[i:] + seq[:i] for i in range(len(seq)))
+print(F(S))
+print(list(F(S)))
+print(list(F([1, 2, 3])))
+
+for x in F((1, 2, 3)):
+    print(x, end=' ')
+print('\n')
+
+# Test client
+
+def scramble5(seq):
+    for i in range(len(seq)):  # Generator function
+        yield seq[i:] + seq[:i]  # Yield one item per iteration
+
+
+scramble6 = lambda seq: (seq[i:] + seq[:i] for i in range(len(seq)))
+
+# from inter2 import intersect, union
+#
+#
+# def tester(func, items, trace=True):
+#     for args in scramble5(items):  # Use generator (or: scramble6(items))
+#         if trace: print(args)
+#         print(sorted(func(*args)))
+#
+#
+# tester(intersect(), ('aab', 'abcde', 'ababab'))
+# tester(intersect(), ([1, 2], [2, 3, 4], [1,6,2,7,,3]), False)
+
+# Permutations: All possible combinations
+
