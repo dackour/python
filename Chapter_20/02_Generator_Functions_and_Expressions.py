@@ -222,3 +222,66 @@ print(''.join(gensub(line)))  # But why generate
 
 # Generators Are single-Iteration Objects
 
+G = (c * 4 for c in 'SPAM')
+print(iter(G) is G)  # My iterator is myself: G has __next__
+
+G = (c * 4 for c in 'SPAM')  # Make a new generator
+I1 = iter(G)  # Iterate manually
+print(next(I1))
+print(next(I1))
+I2 = iter(G)  # Second iterator at same position!
+print(next(I2))
+
+print(list(I1))  # Collect the rest of I1's items
+#print(next(I2))  # Other iterator exhausted too
+
+I3 = iter(G)  # Ditto for new iterators
+#print(next(I3))
+
+I3 = iter(c * 4 for c in 'SPAM')  # New generator to start over
+print(next(I3))
+
+
+def timesthree(S):
+    for c in S:
+        yield c * 3
+
+
+G = timesthree('spam')  # Generator functions work the same way
+print(iter(G) is G)
+I1, I2 = iter(G), iter(G)
+print(next(I1))
+print(next(I1))
+print(next(I2))  # I2 at same position as I1
+
+L = [1, 2, 3, 4]
+I1, I2 = iter(L), iter(L)
+print(next(I1))
+print(next(I1))
+print(next(I2))  # Lists support multiple iterators
+del L[2:]  # Changes reflected in iterators
+#print(next(I1))
+
+# The Python 3.3 yield from Extension
+
+
+def both(N):
+    for i in range(N): yield i
+    for i in (x ** 2 for x in range(N)): yield i
+
+
+print(list(both(5)))
+
+
+def both2(N):
+    yield from range(N)
+    yield from (x ** 2 for x in range(N))
+
+
+print(list(both2(5)))
+
+print(' : '.join(str(i) for i in both2(5)))
+
+print('\n')
+
+# Generation in Built-in Types, Tools, and Classes
