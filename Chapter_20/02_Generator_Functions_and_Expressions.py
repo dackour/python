@@ -338,4 +338,6 @@ print('\n')
 print(*(x.upper() for x in 'spam'))
 
 # Preview: User-defined iterables in classes
+# Example Generating Scrambled Sequences
+# Scrambling sequences
 
