@@ -443,3 +443,46 @@ scramble6 = lambda seq: (seq[i:] + seq[:i] for i in range(len(seq)))
 
 # Permutations: All possible combinations
 
+
+def permute1(seq):
+    if not seq:  # Shuffle any sequence: list
+        return [seq]  # Empty sequence
+    else:
+        res = []
+        for i in range(len(seq)):
+            rest = seq[:i] + seq[i+1:]  # Delete current node
+            for x in permute1(rest):  # Permute the others
+                res.append(seq[i:i+1] + x)  # Add node at front
+        return res
+
+
+def permute2(seq):
+    if not seq:  # Shuffle any sequence: generator
+        yield seq  # Empty sequence
+    else:
+        for i in range(len(seq)):
+            rest = seq[:i] + seq[i+1:]  # Delete current node
+            for x in permute2(rest):  # Permute the others
+                yield seq[i:i+1] + x  # Add node at front
+
+
+print(list(scramble5('abc')))  # Simple scrambles: N
+
+print(permute1('abc'))  # Permutations larger: N!
+
+print(list(permute2('abc')))  # Generate all combinations
+
+G = permute2('abc')  # Iterate (iter() not needed
+print(next(G))
+print(next(G))
+
+for x in permute2('abc'): print(x)  # Automatic iteration
+
+print(permute1('spam') == list(permute2('spam')))
+
+print(len(list(permute2('spam'))), len(list(scramble5('spam'))))
+
+print(list(scramble5('spam')))
+print(list(permute2('spam')))
+
+
