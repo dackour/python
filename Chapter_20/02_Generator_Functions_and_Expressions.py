@@ -485,4 +485,39 @@ print(len(list(permute2('spam'))), len(list(scramble5('spam'))))
 print(list(scramble5('spam')))
 print(list(permute2('spam')))
 
+# On the other hand: Space and time conciseness, expressiveness
 
+import math
+print(math.factorial(10))  # 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1
+
+seq = list(range(10))
+# p1 = permute1(seq)  # 37 seconds on a 2ghz quad-core machine
+#
+# print(len(p1), p1[0], p1[1])
+
+p2 = permute2(seq)  # Returns generator immediately
+print(next(p2))  # And produces each result quickly on request
+print(next(p2))
+
+# p2 = list(permute2(seq))  # About 28 seconds, though still impractical
+# print(p1 == p2)  # Same as set of results generated
+
+print(math.factorial(50))
+p3 = permute2(list(range(50)))  # permute1 is not an option here
+print(next(p3))
+
+import random
+print(math.factorial(20))  # permute1 is not an option here
+seq = list(range(20))
+
+random.shuffle(seq)  # Shufffle sequence randomly first
+p = permute2(seq)
+print(next(p))
+print(next(p))
+
+random.shuffle(seq)
+p = permute2(seq)
+print(next(p))
+print(next(p))
+
+# Example: Emulating zip and math with Iteration Tools
