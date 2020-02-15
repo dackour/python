@@ -670,5 +670,4 @@ print(list(myzip(S1, S2)))  # Go!...
 #
 # print(list(myzip('abc', 'lmnop')))
 
-# Comprehension Syntax Summary
 
