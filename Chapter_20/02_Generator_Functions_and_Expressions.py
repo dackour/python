@@ -521,3 +521,154 @@ print(next(p))
 print(next(p))
 
 # Example: Emulating zip and math with Iteration Tools
+
+S1 = 'abc'
+S2 = 'xyz123'
+print(list(zip(S1, S2)))  # zip pairs items from iterables
+
+# zip pairs items, truncates at shortest
+print(list(zip([-2, -1, 0, 1, 2])))  # Single sequence: 1-ary tuples
+print(list(zip([1, 2, 3], [2, 3, 4, 5])))  # N sequences: N-ary tuple
+
+# map passes aired items to function, truncates
+print(list(map(abs, [-2, -1, 0, 1, 2])))  # Single sequence: 1-ary function
+print(list(map(pow, [1, 2, 3], [2, 3, 4, 5])))  # N sequences: N-ary function
+
+# map and zip accept arbitrary iterables
+print(list(map(lambda x, y: x + y, open('myfile'), open('temp.txt'))))
+print([x + y for (x, y) in zip(open('myfile'), open('temp.txt'))])
+
+# Coding your own map(func, ...)
+# map(func, seqs...) work alike with zip
+
+
+def mymap(func, *seqs):
+    res = []
+    for args in zip(*seqs):
+        res.append(func(*args))
+    return res
+
+
+print(mymap(abs, [-2, -1, 0, 1, 2]))
+print(mymap(pow, [1, 2, 3], [2, 3, 4, 5]))
+
+# Using a list comprehension
+
+
+def mymap(func, *seqs):
+    return [func(*args) for args in zip(*seqs)]
+
+
+print(mymap(abs, [-2, -1, 0, 1, 2]))
+print(mymap(pow, [1, 2, 3], [2, 3, 4, 5]))
+
+# Using generators: yield and (...)
+
+
+def mymap(func, *seqs):
+    res = []
+    for args in zip(*seqs):
+        yield func(*args)
+
+
+def mymap(func, *seqs):
+    return (func(*args) for args in zip(*seqs))
+
+
+print(list(mymap(abs, [-2, -1, 0, 1, 2])))
+print(list(mymap(pow, [1, 2, 3], [2, 3, 4, 5])))
+
+# Coding your own zip(...) and map(None,...)
+
+print(map(None, [1, 2, 3], [2, 3, 4, 5]))
+print(map(None, 'abc', 'xyz123'))
+
+# zip(seqs...) and 2.x map(None,seqs...) workalikes
+
+
+def myzip(*seqs):
+    seqs = [list(S) for S in seqs]
+    res = []
+    while all(seqs):
+        res.append(tuple(S.pop() for S in seqs))
+    return res
+
+
+print(myzip([1, 2, 3], [4, 5, 6]))
+
+
+def mymappad(*seqs, pad=None):
+    seqs = [list(S) for S in seqs]
+    res = []
+    while any(seqs):
+        res.append(tuple((S.pop(0) if S else pad) for S in seqs))
+    return res
+
+
+S1, S2 = 'abc', 'xyz123'
+print(myzip(S1, S2))
+print(mymappad(S1, S2))
+print(mymappad(S1, S2, pad=99))
+
+# Using generators: yield
+
+
+def myzip(*seqs):
+    seqs = [list(S) for S in seqs]
+    while all(seqs):
+        yield tuple(S.pop(0) for S in seqs)
+
+
+def mymappad(*seqs, pad=None):
+    seqs = [list(S) for S in seqs]
+    while any(seqs):
+        yield tuple((S.pop(0) if S else pad) for S in seqs)
+
+
+S1, S2 = 'abc', 'xyz123'
+print(list(myzip(S1, S2)))
+print(list(mymappad(S1, S2)))
+print(list(mymappad(S1, S2, pad=99)))
+
+# Alternative implementation with lengths
+
+
+def myzip(*seqs):
+    minlen = min(len(S) for S in seqs)
+    return [tuple(S[i] for S in seqs) for i in range(minlen)]
+
+
+def mymappad(*seqs, pad=None):
+    maxlen = max(len(S) for S in seqs)
+    index = range(maxlen)
+    return [tuple((S[i] if len(S) > i else pad) for S in seqs) for i in index]
+
+
+S1, S2 = 'abc', 'xyz123'
+print(myzip(S1, S2))
+print(mymappad(S1, S2))
+print(mymappad(S1, S2, pad=99))
+
+# Using generators (...)
+
+
+def myzip(*seqs):
+    minlen = min(len(S) for S in seqs)
+    return (tuple(S[i] for S in seqs) for i in range(minlen))
+
+
+S1, S2 = 'abc', 'xyz123'
+print(list(myzip(S1, S2)))  # Go!...
+
+
+# def myzip(*args):
+#     iters = list(map(iter, args))  # Allow multiple scans
+#     while iters:
+#         res = [next(i) for i in iters]
+#         yield tuple(res)
+#
+#
+# print(list(myzip('abc', 'lmnop')))
+
+# Comprehension Syntax Summary
+
