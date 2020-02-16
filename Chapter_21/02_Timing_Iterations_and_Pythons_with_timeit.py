@@ -48,3 +48,9 @@ def testcase():
 print(min(timeit.repeat(stmt=testcase, number=1000, repeat=3)))
 
 # Benchmark Module and Script: timeit
+# Benchmark script results
+# More fun with benchmarks
+# An impact of function calls revisited
+# Comparing techniques: Homegrown versus batteries
+# Room for improvement setup
+# Other Benchmarking Topics: pystones
