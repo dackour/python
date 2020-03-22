@@ -23,4 +23,25 @@ printer(simple.spam)  # Code wasn't rerun: attribute unchanged
 
 # import and from Are Assignments
 
+from small import x, y  # Copy two names out
+x = 42  # Changes local x only
+y[0] = 42  # Changes shared mutable in place
 
+import small  # Get module name (from doesn't)
+print(small.x)  # Smalls x is not my x
+print(small.y)  # But we share a changed mutable
+
+# Cross-file changes
+
+from small import x, y  # Copy two names out (only)
+x = 42  # Changes my x only
+
+import small  # Get module name
+small.x = 42  # Changes x in other module
+print(small.x)
+
+# Import and from Equivalence
+# Potential pitfalls of the from Statement
+# When import is required
+
+# import and from Equivalence
