@@ -44,4 +44,8 @@ print(small.x)
 # Potential pitfalls of the from Statement
 # When import is required
 
+from mmodule import func
+from nmodule import func  # This overwrites the one we fetched from M
+print(func())  # Calls N.func only!
+
 # import and from Equivalence

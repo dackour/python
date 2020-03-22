@@ -1,5 +1,5 @@
 
 
 def func():
-    print('Module M')
+    return print('Module M')
 
