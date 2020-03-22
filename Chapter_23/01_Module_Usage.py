@@ -48,4 +48,12 @@ from mmodule import func
 from nmodule import func  # This overwrites the one we fetched from M
 print(func())  # Calls N.func only!
 
-# import and from Equivalence
+import mmodule, nmodule  # Get the whole modules not their names
+print(mmodule.func())  # We call both names now
+print(nmodule.func())  # The module names make them unique
+
+from mmodule import func as mfunc  # Rename uniquely with as
+from nmodule import func as nfunc
+
+mfunc()
+nfunc()
