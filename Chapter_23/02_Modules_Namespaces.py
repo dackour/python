@@ -11,3 +11,4 @@ print(list(name for name in module2.__dict__.keys() if not name.startswith('__')
 print(list(name for name in module2.__dict__ if not name.startswith('__')))
 
 # Attribute Name Qualification
+# Imports Versus Scopes
