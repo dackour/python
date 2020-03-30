@@ -12,4 +12,4 @@ print(sys.path)
 print(string)
 
 # Imports within packages
-
+import pkg.spam
