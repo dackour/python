@@ -20,3 +20,7 @@ import pkg.spam
 # Imports are still relative to the CWD, again
 # Pitfalls of Package-Relative Imports: Mixed Use
 # The issue
+# Fix 1: Package subdirectories
+# Fix 2: Full path absolute import
+# Example: Application to module self-test code (preview)
+
