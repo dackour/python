@@ -13,3 +13,10 @@ print(string)
 
 # Imports within packages
 import pkg.spam
+
+# Imports are still relative to the CWD
+# Selecting modules with relative and absolute imports
+# Relative imports search packages only
+# Imports are still relative to the CWD, again
+# Pitfalls of Package-Relative Imports: Mixed Use
+# The issue
