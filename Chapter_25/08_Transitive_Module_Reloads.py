@@ -51,3 +51,6 @@ def tester(reloader, modname):  # Self test code
 
 if __name__ == '__main__':
     tester(reload_all, 'a')  # Test: reload myself
+
+# Testing recursive reloads
+# Alternative Codings
