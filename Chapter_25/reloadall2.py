@@ -10,10 +10,10 @@ from reloadall import status, tryreload, tester
 def transitive_reload(objects, visited):
     for obj in objects:
         if type(obj) == types.ModuleType and obj not in visited:
-        status(obj)
-        tryreload(obj)  # Reload this, recur to attrs
-        visited.add(obj)
-        transitive_reload(obj.__dict__.values(), visited)
+            status(obj)
+            tryreload(obj)  # Reload this, recur to attrs
+            visited.add(obj)
+            transitive_reload(obj.__dict__.values(), visited)
 
 
 def reload_all(*args):
