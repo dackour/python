@@ -59,3 +59,14 @@ printer()  # Huh??
 # function(1, 2, 3)
 
 # Recursive from Imports May Not Work
+
+# recur1.py
+# X = 1
+# import recur2  # Run recur2 now if it doesn't exist
+# Y = 2
+
+# recur2.py
+# from recur1 import X  # OK X already assigned
+# from recur1 import Y  # Error Y not yet assigned
+
+# Chapter Summary
